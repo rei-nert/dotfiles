@@ -1,0 +1,119 @@
+set nocompatible		" No vi compatible
+filetype off                  " required
+
+syntax enable
+set foldmethod=indent
+
+" Enable :find to search in subdirectory
+set path+=** 
+
+set wildmenu
+
+command! MakeTags !ctags -R . " Allow tags in files
+" <C-]> jump to the tag under the cursor
+" g<C-]> for ambigous tags
+" <C-t> to jump back to the tag stack
+
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+
+Plugin 'tpope/vim-fugitive'
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'preservim/nerdtree'
+Plugin 'preservim/nerdcommenter'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'mattn/emmet-vim'
+Plugin 'loremipsum'
+Plugin 'liuchengxu/vista.vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'jeetsukumaran/vim-pythonsense'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'moll/vim-node'
+Plugin 'joshdick/onedark.vim'
+Plugin 'itchyny/lightline.vim'
+
+
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+
+" Git plugin not hosted on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+
+" git repos on your local machine (i.e. when working on your own plugin)
+
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+
+filetype plugin indent on    " required
+
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree
+map <C-]> :YcmCompleter GoTo<CR>
+
+
+au BufNewFile,BufRead *.py
+    \ 	       |" replace tabs with spaces
+    \ set autoindent      |" copy indent when starting a new line
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+
+
+nnoremap <space> za
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>u :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gd :YcmCompleter GetDoc<CR>
+nnoremap <leader>f :YcmCompleter FixIt<CR>
+
+
+set smartindent
+set cindent
+set number
+set expandtab
+set encoding=utf-8
+set smartcase
+set ignorecase
+set termguicolors
+set nobackup
+set background=dark
+
+
+syntax on
+colorscheme onedark
+
+let g:lightline = {
+  \ 'colorscheme': 'onedark',
+  \ }
+
