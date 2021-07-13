@@ -1,0 +1,48 @@
+#!/bin/sh
+
+###########################################################
+# Help                                                    #
+###########################################################
+Help()
+{
+  echo "Script to add  a bookmark on Nextcloud Notes Bookmark"
+  echo
+  echo "Syntax: addbkmk [-s|h|p|n]"
+  echo
+  echo "options:"
+  echo "-s    Subject of file, putting it in the right category"
+  echo "-h    Print this help"
+  echo "-p    Change main path of bookmark file"
+  echo
+}
+
+
+##########################################################
+SUB=""
+BkMkPath=${HOME}/Nextcloud/Notes/Resources/bookmarks
+EDT="nvim"
+
+#######################################
+while getopts ":hs:p:" option; do
+  case $option in 
+    h) Help 
+      exit;;
+    p) BkMkPath=${OPTARG};;
+    s) SUB=${OPTARG};;
+    \?)echo "Error: Invalid option"
+      echo "Use addbkmk -h to see help about the command"
+      exit;;
+  esac
+done
+
+## Check if the file exists already
+if [ -e "$BkMkPath" ]; then
+  $EDT "+normal G$" +startinsert! "$BkMkPath"
+  exit
+fi
+
+mkdir -p "${DIR%/*}"
+## Create file and open it
+touch "${BkMkPath}"
+$EDT "+normal G$" +startinsert! "$BkMkPath"
+

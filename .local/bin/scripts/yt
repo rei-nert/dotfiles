@@ -1,0 +1,98 @@
+#!/bin/bash
+##########################################################
+VID=false
+AUD=false
+LINK="https://www.youtube.com/playlist?list=WL"
+SPEED="3.0"
+INVIDIOUSLINK="iv.ggtyler.dev"
+
+###########################################################
+# Help                                                    #
+###########################################################
+Help() {
+	echo "Script to watch youtube videos"
+	echo
+	echo "Syntax: yt [-h|v|a|p|s] link"
+	echo
+	echo "options:"
+	echo "-h    Print this help"
+	echo "-v    Indicates that the link is a video - boolean (default: false)"
+	echo "-a    No video output, only audio - boolean (default: false)"
+	echo "-p    Change playlist link (default: Watch Later)"
+	echo "-s    Change video playback speed (default 3.0)"
+	echo
+}
+PlayVideo() {
+	name="$(date -u +%Y%m%d%H%M%S)"
+	trap 'Cleanup /tmp/$name; exit 5' SIGHUP SIGINT SIGQUIT SIGABRT SIGTERM ERR EXIT
+	yt-dlp --no-part --abort-on-error --file-access-retries 10 -f "bestaudio" -R 50 "$@" -o /tmp/"${name}"
+	yt-dlp --abort-on-error --file-access-retries 10 -f "bestvideo[height<=?720]" -R 50 --fragment-retries 100 "$@" -o - | mpv --audio-file="/tmp/${name}" --speed="${SPEED}" -
+	if [[ -e "/tmp/$name" ]]; then
+		Cleanup "/tmp/$name"
+	fi
+}
+PlayOdysee() {
+	# Odysee doesn't have a lot of video formats, so format selection doesn't work as expected
+	yt-dlp --abort-on-error --file-access-retries 10 --http-chunk-size 5M -N 10 -R 50 --fragment-retries 100 "$@" -o - | mpv --speed="${SPEED}" -
+}
+PlayAudio() {
+	yt-dlp --no-part --abort-on-error --file-access-retries 10 -f "bestaudio" -R 50 "$@" -o - | mpv --speed="${SPEED}" -
+}
+InvidiousLink() {
+	echo "$@" | sed -e "s/www.youtube.com/${INVIDIOUSLINK}/g"
+
+}
+Cleanup() {
+	if [[ -e "$1" ]]; then
+		rm -rf "$1" && echo "Temporary file $1 deleted..."
+	fi
+}
+
+#######################################
+while getopts ":hvap:s:" option; do
+	case $option in
+	h)
+		Help
+		exit
+		;;
+	v) VID=true ;;
+	a) AUD=true ;;
+	p) LINK=${OPTARG} ;;
+	s) SPEED=${OPTARG} ;;
+	\?)
+		echo "Error: Invalid option"
+		echo "Use yt -h to see help about the command"
+		exit
+		;;
+	esac
+done
+shift $((OPTIND - 1))
+
+if "${AUD}" && [[ "${LINK}" == "https://www.youtube.com/playlist?list=WL" ]]; then
+	invidious="$(InvidiousLink "$@")"
+	PlayAudio "${invidious}"
+	exit 0
+fi
+
+if "${VID}"; then
+	if [[ "$*" =~ "odysee" ]]; then
+		PlayOdysee "$@"
+		exit 0
+	fi
+	invidious="$(InvidiousLink "$@")"
+	PlayVideo "${invidious}"
+	trap - SIGHUP SIGINT SIGQUIT SIGABRT SIGTERM ERR EXIT
+	exit 0
+fi
+
+for i in $(yt-dlp --flat-playlist -i -O url "${LINK}"); do
+	invidious="$(InvidiousLink "$i")"
+	if "${AUD}"; then
+		PlayAudio "$invidious"
+		continue
+	fi
+	PlayVideo "$invidious"
+done
+
+trap - SIGHUP SIGINT SIGQUIT SIGABRT SIGTERM ERR EXIT
+exit 0

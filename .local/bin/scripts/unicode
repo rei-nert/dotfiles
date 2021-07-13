@@ -1,0 +1,3 @@
+#!/bin/sh
+
+w3m https://wikiless.tiekoetter.com/wiki/List_of_Unicode_characters?lang=en

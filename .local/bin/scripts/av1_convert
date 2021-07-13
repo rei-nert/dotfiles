@@ -1,0 +1,37 @@
+#!/bin/sh 
+
+###########################################################
+# Help                                                    #
+###########################################################
+Help()
+{
+  echo "Script to convert video files to av1 codec"
+  echo
+  echo "Syntax: av1_convert [-h|d|e]"
+  echo
+  echo "options:"
+  echo "-h    Print this help"
+  echo "-d    Change directory of execution (default .)"
+  echo "-e    File extension (default mkv)"
+  echo
+}
+
+##########################################################
+EXTENSION="mkv"
+DIR="."
+
+#######################################
+while getopts ":hd:e:" option; do
+  case $option in
+    h) Help
+      exit;;
+    d) DIR=${OPTARG};;
+    e) EXTENSION=${OPTARG};;
+    \?)echo "Error: Invalid option"
+      echo "Use av1_convert -h to see help about the command"
+      exit;;
+  esac
+done
+
+
+find "${DIR}" -type f -exec toav1 {} \;

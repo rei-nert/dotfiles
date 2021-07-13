@@ -1,0 +1,56 @@
+#!/bin/sh
+
+###########################################################
+# Help                                                    #
+###########################################################
+Help()
+{
+  echo "Script to create a note on Nextcloud Notes"
+  echo
+  echo "Syntax: note [-s|h|p|n]"
+  echo
+  echo "options:"
+  echo "-s    Subject of file, putting it in the right folder"
+  echo "-h    Print this help"
+  echo "-p    Change main path of note file"
+  echo "-n    Name of the file and its main topic, otherwise its name is the time of file creation"
+  echo
+}
+
+
+##########################################################
+NAME="$(date -u +%Y%m%d%H%M%S)"
+SUB=""
+NotePath=${HOME}/Nextcloud/Notes
+
+#######################################
+while getopts ":hs:p:n:" option; do
+  case $option in 
+    h) Help 
+      exit;;
+    n) NAME="${OPTARG}";;
+    p) NotePath=${OPTARG};;
+    s) SUB=${OPTARG};;
+    \?)echo "Error: Invalid option"
+      echo "Use note -h to see help about the command"
+      exit;;
+  esac
+done
+
+DIR="${NotePath}/${SUB}"
+FILE="${DIR}/${NAME}.md"
+
+## Check if the file exists already
+if [ -e "$FILE" ]; then
+  vim "+normal G$" +startinsert! "$FILE"
+  exit
+fi
+
+mkdir -p "${DIR}"
+## Create file and open it
+touch "${FILE}"
+NAME=$(echo "$NAME" | sed -e 's|\([A-Z][^A-Z]\)| \1|g' -e 's|\([a-z]\)\([A-Z]\)|\1 \2|g')
+NAME=$(echo "${NAME}" | sed 's/\([a-z]\)\([a-zA-Z0-9]*\)/\u\1\2/')
+printf "# %s\n\n" "${NAME}" >> "${FILE}"
+nvim "+normal G$" +startinsert! "$FILE"
+

@@ -115,7 +115,8 @@ export ARCHFLAGS="-arch x86_64"
 alias gs='git status'
 alias rm='rm -i'
 alias mv='mv -i'
-alias grep='grep --colar=auto'
+alias grep='grep --color=auto'
+alias isodate='date -u +%Y%m%d%H%M%S'
 
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh

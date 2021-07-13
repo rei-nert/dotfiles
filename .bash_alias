@@ -1,0 +1,51 @@
+alias rm='rm -i'
+alias mv='mv -i'
+alias isodate='date -u +%Y%m%d%H%M%S'
+alias free='free -h'
+alias tree='tree -a'
+alias df='df -h'
+alias diff='diff --color'
+alias c='printf "\e[H\e[2J"'
+alias rem='transmission-remote'
+alias g="git"
+
+if [[ -x /usr/sbin/nvim ]]; then
+	alias vi="nvim"
+elif [[ -x /usr/sbin/vim ]]; then
+	alias vi="vim"
+else
+	:
+fi
+
+if [ -x /usr/bin/dircolors ]; then
+	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+	if [[ -x /usr/sbin/eza ]]; then
+		alias ls='eza -al --icons --git --long --header --color=always --group-directories-first'
+	else
+		alias ls='ls -h --color=auto'
+	fi
+	#alias dir='dir --color=auto'
+	#alias vdir='vdir --color=auto'
+
+	if [[ -x /usr/sbin/rg ]]; then
+		alias grep='rg -i --color=auto'
+		alias fgrep='fgrep --color=auto'
+		alias egrep='egrep --color=auto'
+	fi
+fi
+
+if [[ -x /usr/sbin/bat ]]; then
+	alias cat='bat'
+fi
+if [[ -x /usr/sbin/btop ]]; then
+	alias top='btop'
+fi
+
+if [[ -x /usr/sbin/zoxide ]]; then
+	eval "$(zoxide init bash)"
+	alias cd='z'
+fi
+
+if [[ -x /usr/sbin/timg ]]; then
+	alias timg='timg -p s --title -W -U --grid=4x1 -C -b auto --frames=1'
+fi

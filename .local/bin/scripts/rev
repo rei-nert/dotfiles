@@ -1,0 +1,68 @@
+#!/bin/sh
+
+###########################################################
+# Help                                                    #
+###########################################################
+Help() {
+	echo "Script to create revision files"
+	echo
+	echo "Syntax: rev [-s|h|p|n]"
+	echo
+	echo "options:"
+	echo "-s    Subject of file, putting it in the right folder"
+	echo "-h    Print this help"
+	echo "-p    Change main path of revision file"
+	echo "-n    Name of the file and its main topic, otherwise its name is the time of file creation"
+	echo
+}
+
+List() {
+	ls --color=auto -la $RevPath
+}
+
+##########################################################
+NAME="$(date -u +%Y%m%d%H%M%S)"
+SUB=""
+RevPath=${HOME}/Nextcloud/Medicina/Revision
+
+#######################################
+while getopts ":hs:p:n:l" option; do
+	case $option in
+	h)
+		Help
+		exit
+		;;
+	l)
+		List
+		exit
+		;;
+	n) NAME="${OPTARG}" ;;
+	p) RevPath=${OPTARG} ;;
+	s) SUB=${OPTARG} ;;
+	\?)
+		echo "Error: Invalid option"
+		echo "Use rev -h to see help about the command"
+		exit
+		;;
+	esac
+done
+
+DIR="${RevPath}/${SUB}"
+FILE="${DIR}/${NAME}.md"
+
+## Check if the file exists already
+if [ -e "$FILE" ]; then
+	vim "${FILE}"
+	exit
+fi
+
+## Check if directory exists and create one if not
+#
+mkdir -p "${DIR}"
+
+## Create file and open it
+touch "${FILE}"
+NAME=$(echo "$NAME" | sed -e 's|\([A-Z][^A-Z]\)| \1|g' -e 's|\([a-z]\)\([A-Z]\)|\1 \2|g')
+NAME=$(echo "${NAME}" | sed 's/\([a-z]\)\([a-zA-Z0-9]*\)/\u\1\2/')
+printf "# %s\n\n# References\n" "${NAME}" >>"${FILE}"
+vim "${FILE}"

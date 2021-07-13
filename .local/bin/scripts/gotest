@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+exec entr bash -c "clear; go test ." < <(find .)

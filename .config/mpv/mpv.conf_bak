@@ -1,0 +1,123 @@
+sub-auto=fuzzy #subtitle fuzzy searching
+sub-bold=yes #subtitle bold
+profile=gpu-hq #high quality
+
+# OpenGL settings
+#gpu-api=opengl
+
+# Vulkan
+gpu-api=vulkan 
+vulkan-async-compute=yes
+vulkan-async-transfer=yes
+vulkan-queue-count=1
+vd-lavc-dr=yes
+# Hardware decoding
+hwdec=auto
+
+# Audio for speed content
+af=scaletempo2
+
+# Save position
+save-position-on-quit
+
+#Use wayland
+gpu-context=wayland
+
+############
+# Playback #
+############
+
+deinterlace=no # global reset of deinterlacing to off
+
+
+##############
+# Colorspace #
+##############
+
+# see https://github.com/mpv-player/mpv/wiki/Video-output---shader-stage-diagram
+target-prim=auto
+ target-prim=bt.709 # target Rec.709 for SDR TVs
+ target-prim=bt.2020 # target Rec.2020 (wide color gamut) for HDR TVs
+target-trc=auto
+#gamma-auto
+vf=format=colorlevels=full:colormatrix=auto
+video-output-levels=full
+
+
+##########
+# Dither #
+##########
+
+dither-depth=auto
+temporal-dither=yes
+dither=error-diffusion # preferable... mpv will fallback on fruit if compute shaders are not supported
+# dither=fruit
+
+#############
+# Debanding #
+#############
+
+deband=yes # enabled by default 
+deband-iterations=4 # deband steps
+deband-threshold=48 # deband strength
+deband-range=16 # deband range
+deband-grain=48 # dynamic grain: set to "0" if using the static grain shader
+
+
+#############
+# Subtitles #
+#############
+
+blend-subtitles=yes
+
+
+#########################
+# Motion Interpolation  #
+#########################
+
+override-display-fps=60
+video-sync=display-resample
+interpolation=yes
+tscale=oversample # smoothmotion
+
+
+################
+# Anti-Ringing #
+################
+
+scale-antiring=0.7 # luma upscale deringing
+dscale-antiring=0.7 # luma downscale deringing
+cscale-antiring=0.7 # chroma upscale deringing
+
+
+#############################################################
+# Upscaling & Processing Based on Source Video's Resolution #
+#############################################################
+
+# Chroma subsampling means that chroma information is encoded at lower resolution than luma
+# In MPV, chroma is upscaled to luma resolution (video size) and then the converted RGB is upscaled to target resolution (screen size)
+# For detailed analysis of upscaler/downscaler quality, see https://artoriuz.github.io/blog/mpv_upscaling.html
+
+# fbo-format=rgba16f # use with gpu-api=opengl
+fbo-format=rgba16hf # use with gpu-api=vulkan
+# fbo-format is not not supported in gpu-next profile
+glsl-shaders-clr
+# luma upscaling
+# note: any FSRCNNX above FSRCNNX_x2_8-0-4-1 is not worth the additional computional overhead
+glsl-shaders="~/.config/mpv/shaders/FSRCNNX_x2_8-0-4-1.glsl"
+scale=ewa_lanczossharp
+cscale=ewa_lanczossharp
+# luma downscaling
+# note: ssimdownscaler is tuned for mitchell and downscaling=no
+glsl-shaders-append="~/.config/mpv/shaders/SSimDownscaler.glsl"
+dscale=mitchell
+linear-downscaling=no
+# chroma upscaling and downscaling
+glsl-shaders-append="~/.config/mpv/shaders/KrigBilateral.glsl" 
+# cscale=mitchell # ignored with gpu-next
+sigmoid-upscaling=yes
+
+demuxer-max-bytes=1000000KiB
+cache=yes
+script-opts=ytdl_hook-ytdl_path=/usr/bin/yt-dlp
+ytdl-format=bestvideo[height<=?480][fps<=?30]+bestaudio/best

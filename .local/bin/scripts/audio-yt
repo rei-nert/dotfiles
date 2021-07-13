@@ -1,0 +1,3 @@
+#!/bin/sh
+
+yt-dlp -f "ba" -N 5 --add-metadata -o "%(title)s.%(ext)s" --restrict-filenames "$1"

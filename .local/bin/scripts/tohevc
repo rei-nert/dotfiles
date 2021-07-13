@@ -1,0 +1,54 @@
+#!/bin/sh 
+
+
+Help()
+{
+  echo "TODO"
+}
+
+
+CRF="32"
+EXTENSION="mkv"
+PRESET="faster"
+DESTIONATION="."
+
+
+while getopts ":hc:d:e:p:" option; do
+  case $option in
+    h) Help
+      exit;;
+    c) CRF=${OPTARG};;
+    d) DESTIONATION=${OPTARG};;
+    e) EXTENSION=${OPTARG};;
+    p) PRESET=${OPTARG};;
+    /?) echo "Error: Invalid option"
+      exit;;
+  esac
+done
+shift $((OPTIND - 1))
+
+
+fileName="$1" 
+filePath="${fileName%/*}"
+if [[ "${DESTIONATION}" != "." ]] ; then
+  destinationPath="${DESTIONATION}"
+else
+  destinationPath="${filePath}"
+fi
+baseName="${fileName##*/}"
+
+type="$(file -b --mime-type "${fileName}")"
+mimeType="${type%/*}"
+fileExtension="${type#*/}"
+
+if [ "$mimeType" = "video" ] ; then  
+  echo "Converting ${fileName}"
+ ## if [[ -e "${filePath}/HEVC" && -d  "${filePath}/HEVC" ]]; then
+ #   echo "HEVC directory already present... Putting ${baseName%."$fileExtension"}_HEVC.$EXTENSION inside it" 
+ # else
+ #   echo "Creating HEVC directory at ${filePath}/HEVC"
+ #   mkdir -p "${filePath}/HEVC"
+ # fi
+  ffmpeg -i "${fileName}" -c:v libx265 -crf "${CRF}" -preset "${PRESET}" -c:a aac -b:a 128k "${destinationPath}/${baseName%."$fileExtension"}_HEVC.$EXTENSION" 
+fi
+

@@ -1,0 +1,177 @@
+#!/bin/sh 
+
+##########################################################
+### HELP ###
+##########################################################
+
+Help()
+{
+  echo "Script to calculate calories needs"
+  echo
+  echo "Uses revised Harris-Benedict formula (Roza; Shinzgal, 1984), Mifflin-St.Jeor formula and Katch-McArdle formula"
+  echo "Syntax: calCalc [-h]"
+  echo
+  echo "options:"
+  echo "-h    Print this help"
+  echo
+}
+
+
+##########################################################
+#######################################
+while getopts ":h" option; do
+  case $option in
+    h) Help 
+      exit;;
+    \?)echo "Error: Invalid option"
+      echo "Use calCalc -h to see help about the command"
+      exit;;
+  esac
+done
+
+# BMR = basal metabolic rate (kcal)
+# m = mass (kg)
+# h = heigh (cm)
+# a = age (years)
+
+
+# General recommendation: 35 kcal/kg/day
+
+revisedHarrisBenedict()
+{
+
+  # Roza, Shinzgal(1984)
+  ## Men: BMR = (13.397 × m) + (4.799 × h) – (5.677 × a) + 88.362
+  ## Women: BMR = (9.247 × m) + (3.098 × h) – (4.330 × a) + 447.593
+
+  if [ "${GENDER}" = "0" ]; then
+    BMR=$(echo "scale=3; (13.397 * $WEIGHT) + (4.799 * $HEIGHT) - (5.677 * $AGE) + 88.362"| bc)
+  else
+    BMR=$(echo "scale=3; (9.247 * $WEIGHT) + (3.098 * $HEIGHT) - (4.33 * $AGE) + 447.593"| bc)
+  fi
+
+  echo "$BMR"
+}
+
+MifflinStJeor()
+{
+  # Mifflin, St Jeor (1990)
+  ## BMR = (10 × m) + (6.25 × h) – (5 × a) + (5 if man; - 161 if women)
+  if [ "${GENDER}" = "0" ]; then
+    S="5"
+  else
+    S="-161"
+  fi
+  BMR=$(echo "scale=2; (10 * $WEIGHT) + (6.25 * $HEIGHT) - (5 * $AGE) + $S"| bc)
+  echo "$BMR"
+
+}
+
+KatchMcArdle()
+{
+  # BMR = 370 + 21.6*l => l = m(1- f/100) => f = body fat percentage
+  L=$(echo "scale=2; $WEIGHT* (1 - $BF/100)" | bc)
+  BMR=$(echo "scale=2; 370 + 21.6 * $L"| bc)
+
+  echo "$BMR"
+
+}
+
+activityMultiplier()
+{
+  # Activity multiplier (mean)
+  # Sedentary (little or no exercise): BMR x 1.2
+  # Lightly active (1-3 days/week): BMR x 1.375
+  # Moderately active ( 6-7 days/week): BMR x 1.55
+  # Very active (every day or 2x/day): BMR x 1.725
+  # Extra active (> 2x/day every day): BMR x 1.9
+  case $AF in
+    0) TOTAL=$(echo "scale=3; $1 * 1.2" | bc);; 
+    1) TOTAL=$(echo "scale=3; $1 * 1.375" | bc);; 
+    2) TOTAL=$(echo "scale=3; $1 * 1.55" | bc);; 
+    3) TOTAL=$(echo "scale=3; $1 * 1.725" | bc);; 
+    4) TOTAL=$(echo "scale=3; $1 * 1.9" | bc);; 
+    *) echo "Invalid number"; exit 1;;
+  esac
+  echo "$TOTAL"
+}
+
+suggestIntake()
+{
+  # Prot (4 kcal/g) 1.2-2.4 g/kg/day
+  # Fat (9 kcal/g): 15-25% (~0,5-1,5 g/kg/day)
+  # Carbs (4 kcal/g): Rest of calories need (~3-5 g/kg/day)
+  #
+  #
+  TOTALCAL="$1"
+  PROTEININTAKEMIN=$(echo "scale=2; $WEIGHT * 1.2" | bc)
+  PROTEINCALMIN=$(echo "scale=2; $PROTEININTAKEMIN * 4" | bc)
+  PROTEININTAKEMAX=$(echo "scale=2; $WEIGHT * 2.4" | bc)
+  PROTEINCALMAX=$(echo "scale=2; $PROTEININTAKEMAX * 4" | bc)
+
+  FATCALMIN=$(echo "scale=2; $TOTALCAL * 0.15" | bc)
+  FATINTAKEMIN=$(echo "scale=2; $FATCALMIN / 9" | bc)
+  FATCALMAX=$(echo "scale=2; $TOTALCAL * 0.25" | bc)
+  FATINTAKEMAX=$(echo "scale=2; $FATCALMAX / 9" | bc)
+
+  CARBSCALMIN=$(echo "scale=2; $TOTALCAL - ($PROTEINCALMAX + $FATCALMAX)" | bc)
+  CARBSCALMAX=$(echo "scale=2; $TOTALCAL - ($PROTEINCALMIN + $FATCALMIN)" | bc)
+  CARBSINTAKEMIN=$(echo "scale=2; $CARBSCALMIN / 4"| bc)
+  CARBSINTAKEMAX=$(echo "scale=2; $CARBSCALMAX / 4"| bc)
+
+  printf "\tTOTAL CALORIES: %s
+MINIMAL PROTEIN INTAKE: %s\tMINIMAL PROTEIN CALORIES: %s
+MAXIMAL PROTEIN INTAKE: %s\tMAXIMAL PROTEIN CALORIES: %s
+
+MINIMAL FAT INTAKE: %s\tMINIMAL FAT CALORIES: %s
+MAXIMAL FAT INTAKE: %s\tMAXIMAL FAT CALORIES: %s
+
+MINIMAL CARBS INTAKE: %s\tMINIMAL CARBS CALORIES: %s
+MAXIMAL CARBS INTAKE: %s\tMAXIMAL CARBS CALORIES: %s
+\n" "$1" "$PROTEININTAKEMIN"  "$PROTEINCALMIN"  "$PROTEININTAKEMAX"  "$PROTEINCALMAX"  "$FATINTAKEMIN"  "$FATCALMIN"  "$FATINTAKEMAX"  "$FATCALMAX"  "$CARBSINTAKEMIN"  "$CARBSCALMIN"  "$CARBSINTAKEMAX"  "$CARBSCALMAX"  
+}
+
+old_stty_cfg=$(stty -g)
+if [ ! -e /usr/sbin/bc ]; then
+  echo "Sorry, you need bc to use this script"
+  exit 1
+fi
+printf "################## calCalc script ############
+A shell script used to calculate basal metabolic rate and calories needs.
+It uses revised Harris Benedict, Mifflin-StJeor, and Katch-McArdle formulas
+############################################################################
+\nWhat's your current age? [2 digits age, e.g., 33]\n"
+stty raw echo ; AGE=$(head -c 2) ; stty "$old_stty_cfg" # Careful playing with stty
+printf "\nWhat's your height in cm? [3 digits, e.g., 183]\n"
+stty raw icrnl; HEIGHT=$(head -c 3) ; stty "$old_stty_cfg" # Careful playing with stty
+printf "\nWhat's your weight in kg? [3 digits, e.g., 101 (use enter if lower than 3 digits)]\n"
+stty raw icrnl; WEIGHT=$(head -c 3) ; stty "$old_stty_cfg" # Careful playing with stty
+printf "\nWhat's your approximated body fat percentage? [2 digits, e.g., 18]\n"
+stty raw echo ; BF=$(head -c 2) ; stty "$old_stty_cfg" # Careful playing with stty
+printf "\nAre you a male or a female? [1 digit, e.g., 0]
+[0] Male
+[1] Female\n"
+stty raw echo ; GENDER=$(head -c 1) ; stty "$old_stty_cfg" # Careful playing with stty
+printf "\nHow active you are? [1 digit, e.g. 2]
+[0] Sedentary: little or no exercise
+[1] Lightly active: 1-3 days/week
+[2] Moderately active: 6-7 days/week
+[3] Very active: Every day or 2x/day
+[4] Extra active: > 2x/day Every day\n"
+stty raw echo ; AF=$(head -c 1) ; stty "$old_stty_cfg" # Careful playing with stty
+echo
+
+
+RHB=$(revisedHarrisBenedict)
+MSJ=$(MifflinStJeor)
+KMA=$(KatchMcArdle)
+TOTALRHB=$(activityMultiplier "$RHB")
+TOTALMSJ=$(activityMultiplier "$MSJ")
+TOTALKMA=$(activityMultiplier "$KMA")
+
+echo "Suggested intake with revised Harris Benedict formula"
+suggestIntake "$TOTALRHB"
+echo "Suggested intake with Mifflin-StJeor formula"
+suggestIntake "$TOTALMSJ"
+echo "Suggested intake with Katch-McArdle formula"
+suggestIntake "$TOTALKMA"

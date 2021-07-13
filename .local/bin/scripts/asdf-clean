@@ -1,0 +1,3 @@
+#!/bin/sh 
+
+for plugin in $(asdf plugin-list); do asdf list $plugin | head -n -1 | xargs -I $ asdf uninstall $plugin $; done

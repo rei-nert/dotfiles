@@ -1,0 +1,6 @@
+#!/bin/sh 
+
+SCIHUB="https://sci-hub.se"
+LINK=$(curl -s "${SCIHUB}/$@" | grep location.href | grep -Po "[A-Za-z]*\.sci-hub\.se.*pdf")
+
+curl -O "https://${LINK}"

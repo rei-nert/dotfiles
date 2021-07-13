@@ -1,0 +1,7 @@
+#!/bin/sh
+
+LOCALIZATION="-26.3044897,-48.8486725"
+LANG="pt-br"
+DAYS="0"
+
+curl "https://wttr.in/${LOCALIZATION}?lang=${LANG}&${DAYS}"

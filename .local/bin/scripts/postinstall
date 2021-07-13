@@ -1,0 +1,32 @@
+#!/bin/sh 
+
+## POST-INSTALL SCRIPT
+# Description: My personal post-install script, distro agnostic, to create a productive environment.
+# It should detect which distro family it's running on. It should also download a DE/WM, install eye candy, terminal emulator, enable security programs, etc. Also, it will download my config file and my scripts.
+# Everything is modular, so it's possible to change almost everything.
+#
+# Default general installation: app-armor, git, dev kitty (e.g., base-devel), kitty (terminal emulator), brave & firefox (browser), libre office, vim & lunar vim (text editor/IDE), flatpak + flathub, mpv (media player), asdf (version manager), nnn (terminal file explorer), transmission (torrent client), timeshift + restore point (backup), scrcpy (mobile screen mirroring), kde connect (mobile integration), btop (resource manager), pandoc, mupdf-gl 
+#
+# Default programming language installation (with asdf): python 3.11.0, ruby xx, rust 1.68.2, golang 1.19.3, nodejs 19.2.0, pearl xx.x.x, open jdk xx.xx.xx 
+#
+# Default Gnome installation:
+# Default KDE installation:
+# Default XFCE installation:
+# Default Sway installation:
+#
+# Default customization:
+#
+# Tested for: Arch Linux, Ubuntu 22.04, Fedora 38, Debian stable/unstable
+# Tested DE/WM: Gnome, KDE, Sway, XFCE
+#
+
+DetectDistro()
+{
+  ## Function to detect distro family (e.g., arch linux, RHEL, Debian)
+  Distro=${cat /etc/os-release | grep ^NAME=}
+  echo $Distro
+
+}
+
+DetectDistro()
+

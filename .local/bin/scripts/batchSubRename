@@ -1,0 +1,13 @@
+#!/bin/bash 
+
+name=(); 
+for i in *.mkv; do 
+  name=("${name[@]}" "$i") 
+done
+
+for j in *.srt; do 
+  file="${name[0]}"
+  mv "$j" ./"${file%.mkv}.srt"
+  name=("${name[@]:1}")
+done
+

@@ -1,0 +1,41 @@
+#!/bin/sh 
+
+
+###########################################################
+# Help                                                    #
+###########################################################
+Help()
+{
+  echo "Script to convert video files to hevc codec"
+  echo
+  echo "Syntax: hevc_convert [-h|d|e]"
+  echo
+  echo "options:"
+  echo "-h    Print this help"
+  echo "-d    Change directory of execution (default .)"
+  echo "-e    File extension (default mkv)"
+  echo "-p    Destination path (default .)"
+  echo
+}
+
+##########################################################
+DIR="."
+DESTINATION="."
+EXTENSION="mkv"
+
+#######################################
+while getopts ":hd:e:p:" option; do
+  case $option in
+    h) Help
+      exit;;
+    d) DIR=${OPTARG};;
+    e) EXTENSION=${OPTARG};;
+    p) DESTINATION=${OPTARG};;
+    \?)echo "Error: Invalid option"
+      echo "Use hevc_convert -h to see help about the command"
+      exit;;
+  esac
+done
+
+
+find "${DIR}" -type f -exec tohevc -d ${DESTINATION} -e ${EXTENSION} {} \;

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+API_KEY="$(head -n1 .config/geminiAPI/APIKEY)"
+PROMPT="$(printf "{ \"contents\": [{ \"parts\":  [{ \"text\": \"%s\" }] }]}" "$*" |  jq '.')"
+
+curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${API_KEY}" -H 'Content-Type: application/json' -X POST -d "$PROMPT" 2> /dev/null | jq '.candidates[] | .content | .parts[] | .text' | sed -e 's/%/%%/g' | xargs -0 -I{} printf {} |  glow - 

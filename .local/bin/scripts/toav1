@@ -1,0 +1,17 @@
+#!/bin/sh 
+
+
+fileName=$* 
+type="$(file -b --mime-type "${fileName}")"
+mimeType="${type%/*}"
+fileExtension="${type#*/}"
+rav1eParams="--tile-rows 2 --tile-cols 2 -s 5 --quantizer 80"
+audioParams="-c:a libopus -b:a 128k -ac 2"
+pixFormat="yuv420p10le"
+EXTENSION="mkv"
+
+if [ "$mimeType" = "video" ] ; then  
+  echo "Converting ${fileName}"
+  av1an -r -i "${fileName}" -e rav1e -v "${rav1eParams}" -a "${audioParams}" --pix-format "$pixFormat" -o "${fileName%."$fileExtension"}_AV1.$EXTENSION"; 
+  fi
+

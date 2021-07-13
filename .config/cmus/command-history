@@ -1,0 +1,19 @@
+add -p Cyberpunk 2077 OST/
+add -p Genshin Impact OST/
+add -p Doom Eternal OST/
+add -p 3. The Lord Of The Rings- The Return Of The King (OST)/
+add -p 2. The Lord Of The Rings- The Two Towers (OST)/
+add -p 1. The Lord Of The Rings- The Fellowship Of The Ring (OST)/
+pl-create "Cyberpunk 2077 OST"
+pl-create "Genshin Impact OST"
+pl-create "Doom OST"
+pl-create "LotR OST"
+add -p 3. The Lord Of The Rings- The Return Of The King (OST)/3
+add -p VA Cyberpunk 2077 OST 2CD FLAC 2020/
+a -p "Doom Eternal OST"
+pl-create "LOTR OST"
+pl-create "Doom Eternal OST"
+a -p "Genshin Impact OST"
+a -p
+q
+live-filter 

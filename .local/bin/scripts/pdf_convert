@@ -1,0 +1,37 @@
+#!/bin/sh 
+
+###########################################################
+# Help                                                    #
+###########################################################
+Help()
+{
+  echo "Script to compress pdf files "
+  echo
+  echo "Syntax: pdf_convert [-h|d|t]"
+  echo
+  echo "options:"
+  echo "-h    Print this help"
+  echo "-d    Change base directory (default .)"
+  echo "-t    File type (default: /ebook)"
+  echo
+}
+
+##########################################################
+TYPE="/ebook"
+DIR="."
+
+#######################################
+while getopts ":ht:d:" option; do
+  case $option in
+    h) Help
+      exit;;
+    d) DIR=${OPTARG};;
+    t) TYPE=${OPTARG};;
+    \?)echo "Error: Invalid option"
+      echo "Use pdf_convert -h to see help about the command"
+      exit;;
+  esac
+done
+
+
+find "${DIR}" -name "*.pdf" -type f -exec sh -c 'echo "Converting $0..."; gs -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS="/ebook" -dNOTRANSPARENCY -dEmbedAllFonts=true -dSubsetFonts=true -dColorImageDownsampleType=/Bicubic -dColorImageResolution=144 -dGrayImageDownsampleType=/Bicubic  -dGrayImageResolution=144 -dMonoImageDownsampleType=/Bicubic  -dMonoImageResolution=144 -sOutputFile="${0%.pdf}_compressed.pdf" "$0"' {} \;

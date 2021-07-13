@@ -1,5 +1,23 @@
+if has("eval")                               " vim-tiny lacks 'eval'
+  let skip_defaults_vim = 1
+endif
+
 set nocompatible		" No vi compatible
 filetype off                  " required
+
+" automatically indent new lines
+set autoindent
+
+" automatically write files when changing when multiple files open
+set autowrite
+
+" turn col and row position on in bottom right
+set ruler " see ruf for formatting
+
+" show command and insert mode
+set showmode
+
+set tabstop=2
 
 syntax enable
 set foldmethod=indent
@@ -7,113 +25,232 @@ set foldmethod=indent
 " Enable :find to search in subdirectory
 set path+=** 
 
+
+if v:version >= 800
+  " stop vim from silently messing with files that it shouldn't
+  set nofixendofline
+
+  " better ascii friendly listchars
+  set listchars=space:*,trail:*,nbsp:*,extends:>,precedes:<,tab:\|>
+
+endif
+
+set textwidth=72
+
 set wildmenu
 
-command! MakeTags !ctags -R . " Allow tags in files
+set cindent
+set expandtab
+
+set encoding=utf-8
+
+set smartcase
+set ignorecase
+
+set termguicolors
+
+set background=dark
+
+set smarttab
+set smartindent
+
+set nobackup
+set noswapfile
+set nowritebackup
+
+set hlsearch
+set incsearch
+set linebreak
+
+" wrap around when searching
+set wrapscan
+
+" avoid most of the 'Hit Enter ...' messages
+set shortmess=aoOtTI
+
+" prevents truncated yanks, deletes, etc.
+set viminfo='20,<1000,s1000
+
+" command history
+set history=100
+
+syntax on
+
+" allow sensing the filetype
+filetype plugin on
+
+" turn on default spell checking
+set spell
+
+set ttyfast
+
+
+"command! MakeTags !ctags -R . " Allow tags in files
 " <C-]> jump to the tag under the cursor
 " g<C-]> for ambigous tags
 " <C-t> to jump back to the tag stack
 
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-
-Plugin 'tpope/vim-fugitive'
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'preservim/nerdtree'
-Plugin 'preservim/nerdcommenter'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'mattn/emmet-vim'
-Plugin 'loremipsum'
-Plugin 'liuchengxu/vista.vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'jeetsukumaran/vim-pythonsense'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'moll/vim-node'
-Plugin 'joshdick/onedark.vim'
-Plugin 'itchyny/lightline.vim'
+set fo-=t   " don't auto-wrap text using text width
+set fo+=c   " autowrap comments using textwidth with leader
+set fo-=r   " don't auto-insert comment leader on enter in insert
+set fo-=o   " don't auto-insert comment leader on o/O in normal
+set fo+=q   " allow formatting of comments with gq
+set fo-=w   " don't use trailing whitespace for paragraphs
+set fo-=a   " disable auto-formatting of paragraph changes
+set fo-=n   " don't recognized numbered lists
+set fo+=j   " delete comment prefix when joining
+set fo-=2   " don't use the indent of second paragraph line
+set fo-=v   " don't use broken 'vi-compatible auto-wrapping'
+set fo-=b   " don't use broken 'vi-compatible auto-wrapping'
+set fo+=l   " long lines not broken in insert mode
+set fo+=m   " multi-byte character line break support
+set fo+=M   " don't add space before or after multi-byte char
+set fo-=B   " don't add space between two multi-byte chars
+set fo+=1   " don't break a line after a one-letter word
 
 
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
+" only load plugins if Plug detected
+if filereadable(expand("~/.vim/autoload/plug.vim"))
+" github.com/junegunn/vim-plug
 
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
+  call plug#begin('~/.local/share/vim/plugins')
+  Plug 'mattn/emmet-vim'
+  Plug 'sheerun/vim-polyglot'
+  Plug 'moll/vim-node'
+  Plug 'frazrepo/vim-rainbow'
+  Plug 'vim-pandoc/vim-pandoc'
+  "Plug 'pegn/pegn-syntax'
+  Plug 'rwxrob/vim-pandoc-syntax-simple'
+  Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+  Plug 'tpope/vim-fugitive'
+  Plug 'hashivim/vim-terraform'
+  Plug 'dracula/vim', { 'as': 'dracula' }
+  Plug 'vim-latex/vim-latex'
+  Plug 'lervag/vimtex'
+  call plug#end()
+  colorscheme dracula
 
-" git repos on your local machine (i.e. when working on your own plugin)
+  " rainbow
+  " FIXME: only do this for non-pandoc file types
+  "let g:rainbow_active=1
 
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+  " terraform
+  let g:terraform_fmt_on_save = 1
 
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
+  " pandoc
+  let g:pandoc#formatting#mode = 'h' " A'
+  let g:pandoc#formatting#textwidth = 72
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-
-filetype plugin indent on    " required
-
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-
+  " golang
+  let g:go_fmt_fail_silently = 0
+  let g:go_fmt_command = 'goimports'
+  let g:go_fmt_autosave = 1
+  let g:go_gopls_enabled = 1
+  let g:go_highlight_types = 1
+  let g:go_highlight_fields = 1
+  let g:go_highlight_functions = 1
+  let g:go_highlight_function_calls = 1
+  let g:go_highlight_operators = 1
+  let g:go_highlight_extra_types = 1
+  let g:go_highlight_variable_declarations = 1
+  let g:go_highlight_variable_assignments = 1
+  let g:go_highlight_build_constraints = 1
+  let g:go_highlight_diagnostic_errors = 1
+  let g:go_highlight_diagnostic_warnings = 1
+  "let g:go_auto_type_info = 1 " forces 'Press ENTER' too much
+  let g:go_auto_sameids = 0
+  "let g:go_metalinter_command='golangci-lint'
+  "let g:go_metalinter_command='golint'
+  "let g:go_metalinter_autosave=1
+  set updatetime=100
+  "let g:go_gopls_analyses = { 'composites' : v:false }
+  au FileType go nmap <leader>t :GoTest!<CR>
+  au FileType go nmap <leader>v :GoVet!<CR>
+  au FileType go nmap <leader>b :GoBuild!<CR>
+  au FileType go nmap <leader>c :GoCoverageToggle<CR>
+  au FileType go nmap <leader>i :GoInfo<CR>
+  au FileType go nmap <leader>l :GoMetaLinter!<CR>
+  au FileType go nmap <leader>m ilog.Print("made")<CR><ESC>
+  au FileType go nmap <leader>n iif err != nil {return err}<CR><ESC>
+else
+  autocmd vimleavepre *.go !gofmt -w % " backup if fatih fails
+endif
 
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * NERDTree
-map <C-]> :YcmCompleter GoTo<CR>
+
+" format perl on save
+if has("eval") " vim-tiny detection
+fun! s:Perltidy()
+  let l:pos = getcurpos()
+  silent execute '%!perltidy -i=2'
+  call setpos('.', l:pos)
+endfun
+"autocmd FileType perl autocmd BufWritePre <buffer> call s:Perltidy()
+endif
+
+" make Y consitent with D and C (yank til end)
+map Y y$
+
+" disable search highlighting with <C-L> when refreshing screen
+nnoremap <C-L> :nohl<CR><C-L>
+
+"find <++> and edit it
+
+nnoremap <Space><Space> /<++><CR>:noh<CR>"_c4l
+
+" replace ex mode with gq
+map Q gq
+
+" Check file in shellcheck:
+	map <leader>s :!clear && shellcheck -x %<CR>  
+
+" Runs a script that cleans out tex build files whenever I close out of a .tex file.
+	autocmd VimLeave *.tex !texclear %
+
+" enable omni-completion
+set omnifunc=syntaxcomplete#Complete
+
+" force some files to be specific file type
+au bufnewfile,bufRead $SNIPPETS/md/* set ft=pandoc
+au bufnewfile,bufRead $SNIPPETS/sh/* set ft=sh
+au bufnewfile,bufRead $SNIPPETS/bash/* set ft=bash
+au bufnewfile,bufRead $SNIPPETS/go/* set ft=go
+au bufnewfile,bufRead $SNIPPETS/c/* set ft=c
+au bufnewfile,bufRead $SNIPPETS/html/* set ft=html
+au bufnewfile,bufRead $SNIPPETS/css/* set ft=css
+au bufnewfile,bufRead $SNIPPETS/js/* set ft=javascript
+au bufnewfile,bufRead $SNIPPETS/python/* set ft=python
+au bufnewfile,bufRead $SNIPPETS/perl/* set ft=perl
+au bufnewfile,bufRead user-data set ft=yaml
+au bufnewfile,bufRead meta-data set ft=yaml
+au bufnewfile,bufRead *.bash* set ft=bash
+au bufnewfile,bufRead *.{peg,pegn} set ft=config
+au bufnewfile,bufRead *.profile set filetype=sh
+au bufnewfile,bufRead *.crontab set filetype=crontab
+au bufnewfile,bufRead *ssh/config set filetype=sshconfig
+au bufnewfile,bufRead .dockerignore set filetype=gitignore
+au bufnewfile,bufRead *gitconfig set filetype=gitconfig
+au bufnewfile,bufRead /tmp/psql.edit.* set syntax=sql
+au bufnewfile,bufRead *.go set spell spellcapcheck=0
+au bufnewfile,bufRead commands.yaml set spell
 
 
-au BufNewFile,BufRead *.py
-    \ 	       |" replace tabs with spaces
-    \ set autoindent      |" copy indent when starting a new line
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
+"fix bork bash detection
+if has("eval")  " vim-tiny detection
+fun! s:DetectBash()
+    if getline(1) == '#!/usr/bin/bash' || getline(1) == '#!/bin/bash'
+        set ft=bash
+        set shiftwidth=2
+    endif
+endfun
+autocmd BufNewFile,BufRead * call s:DetectBash()
+endif
 
+" start at last place you were editing
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+"au BufWritePost ~/.vimrc so ~/.vimrc
 
-nnoremap <space> za
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
-nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>u :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>gd :YcmCompleter GetDoc<CR>
-nnoremap <leader>f :YcmCompleter FixIt<CR>
-
-
-set smartindent
-set cindent
-set number
-set expandtab
-set encoding=utf-8
-set smartcase
-set ignorecase
-set termguicolors
-set nobackup
-set background=dark
-
-
-syntax on
-colorscheme onedark
-
-let g:lightline = {
-  \ 'colorscheme': 'onedark',
-  \ }
-
+" read personal/private vim configuration (keep last to override)
+set rtp^=~/.vimpersonal
+set rtp^=~/.vimprivate
+set rtp^=~/.vimwork

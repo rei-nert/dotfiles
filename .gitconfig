@@ -1,0 +1,24 @@
+[user]
+	email = gabriel.j.reinert@protonmail.com
+	name = Gabriel J. Reinert
+[alias]
+	st = status
+	ci = commit -m
+
+	co = checkout
+	co-staged = !git diff-index --cached --name-only --diff-filter=ACMR HEAD | xargs git co
+
+	di = diff
+	staged = diff --cache
+	di-staged = !git diff-index --cached --name-only --diff-filter=ACMR HEAD | xargs git di
+
+	dilc = diff --cached HEAD^
+
+	fa = fetch --all -v
+	ff = pull --ff-only
+	rv = remote -v
+
+	pt = push --tags origin main:main dev:dev
+
+[pretty]
+	    changelog = format:* %h %s pretty-history = format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
