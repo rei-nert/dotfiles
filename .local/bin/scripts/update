@@ -18,26 +18,32 @@ else
 	OS=$(uname -s)
 fi
 
+SUPERUSER=sudo
+
+if [ -x /usr/sbin/doas ]; then
+	SUPERUSER=doas
+fi
+
 if [ "$OS" = "Arch Linux" ] || [ "$OS" = "Manjaro Linux" ]; then
 	if which yay 1>/dev/null 2>&1; then
 		yay --noconfirm
 	else
-		sudo pacman -Syu --noconfirm
+		$SUPERUSER pacman -Syu --noconfirm
 	fi
 elif [ "$OS" = "Fedora Linux" ] || [ "$OS" = "CentOS Linux" ] || [ "$OS" = "CentOS Stream" ] || [ "$OS" = "Red Hat Enterprise Linux" ] || [ "$OS" = "Rocky Linux" ]; then
-	sudo dnf update -y
+	$SUPERUSER dnf update -y
 elif [ "$OS" = "Debian GNU/Linux" ] || [ "$OS" = "Ubuntu" ] || [ "$OS" = "Pop!_OS" ]; then
-	sudo apt-get update && sudo apt-get upgrade -y
+	$SUPERUSER apt-get update && sudo apt-get upgrade -y
 elif [ "$OS" = "openSUSE Tumbleweed" ] || [ "$OS" = "SLED" ] || [ "$OS" = "SLES" ] || [ "$OS" = "openSUSE Leap" ]; then
-	sudo zypper update -y
+	$SUPERUSER zypper update -y
 elif [ "$OS" = "Alpine Linux" ]; then
-	sudo apk update && sudo apk upgrade -y || doas apk update && doas apk upgrade -y
+	$SUPERUSER apk update && sudo apk upgrade -y || doas apk update && doas apk upgrade -y
 elif [ "$OS" = "Gentoo" ]; then
-	sudo emaint --auto sync && emerge --verbose --update --deep --newuse @world && echo "You should probably run 'emerge --depclean'"
+	$SUPERUSER emaint --auto sync && emerge --verbose --update --deep --newuse @world && echo "You should probably run 'emerge --depclean'"
 elif [ "$OS" = "FreeBSD" ]; then
-	sudo pkg update && sudo pkg upgrade -y
+	$SUPERUSER pkg update && sudo pkg upgrade -y
 else
-	echo "Sorry, I can't update your $OS system. Try updating manually"
+	$SUPERUSER "Sorry, I can't update your $OS system. Try updating manually"
 fi
 
 which flatpak 1>/dev/null 2>&1 && flatpak update -y
