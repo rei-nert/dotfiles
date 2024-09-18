@@ -20,7 +20,7 @@ fi
 
 SUPERUSER=sudo
 
-if [ -x /usr/sbin/doas || -x /usr/bin/doas ]; then
+if [ -x /usr/sbin/doas ] || [ -x /usr/bin/doas ]; then
   SUPERUSER=doas
 fi
 
