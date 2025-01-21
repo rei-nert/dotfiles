@@ -2,23 +2,47 @@
 	email = gabriel.j.reinert@protonmail.com
 	name = Gabriel J. Reinert
 [alias]
-	st = status
-	ci = commit -m
-
+	st = status -u --porcelain
+	cm = commit -am
+  cl = clone
+  which = !git branch | grep -i
 	co = checkout
 	co-staged = !git diff-index --cached --name-only --diff-filter=ACMR HEAD | xargs git co
-
+  ba = branch -a 
+  bd = branch -D 
 	di = diff
 	staged = diff --cache
 	di-staged = !git diff-index --cached --name-only --diff-filter=ACMR HEAD | xargs git di
-
+  ib = init --bare
 	dilc = diff --cached HEAD^
-
+  lg = log --graph
 	fa = fetch --all -v
 	ff = pull --ff-only
 	rv = remote -v
-
+  hr = reset --hard
 	pt = push --tags origin main:main dev:dev
-
+  forget = rm --cached
+  branches-by-date = for-each-ref --sort=-committerdate refs/heads
+  branches-by-date-origin = for-each-ref --sort=-committerdate refs/remotes/origin
+  contributers = shortlog -sne
+  ll = log --format='%H %cI %ae %s'
+	lll = log --format='%ai %H %s'
+  push-skip-ci = push -o ci.skip
+	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
+  log-2-weeks = log --format='%ai %H %s' --since="2 weeks ago"
+[color]
+  ui = true
 [pretty]
 	    changelog = format:* %h %s pretty-history = format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
+
+[github]
+  user = reinert
+
+[commit]
+  gpgsign = true
+
+[user]
+  signingkey = F32BF93F135F543D
+
+[init]
+  defaultBranch = main
