@@ -4,6 +4,5 @@ mkdir -p "$HOME"/.local/bin/scripts/
 cd "$HOME"/.local/bin/scripts/ || exit
 touch "$1"
 chmod +x "$1"
-printf "#!/bin/sh \n" > "$1"
-vim "$1"
-
+printf "#!/bin/sh \n" >"$1"
+$EDITOR "$1"
