@@ -1,9 +1,33 @@
-add -p Cyberpunk 2077 OST/
-add -p Genshin Impact OST/
-add -p Doom Eternal OST/
+cmus --plugins
+update-cache -f
+add ~/Music/Albuns/
+clear
+q
 add -p 3. The Lord Of The Rings- The Return Of The King (OST)/
 add -p 2. The Lord Of The Rings- The Two Towers (OST)/
 add -p 1. The Lord Of The Rings- The Fellowship Of The Ring (OST)/
+add -p Skyrim OST/
+pl-create Skyrim OST
+add -p Cyberpunk 2077 OST/
+add -p Doom Eternal OST/
+add -p Genshin Impact OST/
+add -p
+pl-create LotR OST
+pl-create Cyberpunk 2077
+pl-creat Doom Eternal
+pl-create Genshin Impact OST
+pl-create default
+create-pl default
+help
+help clear
+clear -p
+load -p
+load
+load -l
+clear -p Cyberpunk 2077 OST
+a ~/Músicas/Albuns
+a "~/Músicas/Albuns"
+A ./Albuns
 pl-create "Cyberpunk 2077 OST"
 pl-create "Genshin Impact OST"
 pl-create "Doom OST"
@@ -15,5 +39,4 @@ pl-create "LOTR OST"
 pl-create "Doom Eternal OST"
 a -p "Genshin Impact OST"
 a -p
-q
 live-filter 

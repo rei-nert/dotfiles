@@ -1,0 +1,650 @@
+sw_volume: 96
+audio_device_state:1:my_fifo
+state: pause
+current: 0
+time: 202.954000
+random: 0
+repeat: 0
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:Albuns/BlackSabbath/Paranoid/01 War Pigs.opus
+1:Albuns/BlackSabbath/Paranoid/02 Paranoid.opus
+2:Albuns/BlackSabbath/Paranoid/03 Planet Caravan.opus
+3:Albuns/BlackSabbath/Paranoid/04 Iron Man.opus
+4:Albuns/BlackSabbath/Paranoid/08 Fairies Wear Boots.opus
+5:Albuns/BlackSabbath/Paranoid/05 Electric Funeral.opus
+6:Albuns/BlackSabbath/Paranoid/06 Hand of Doom.opus
+7:Albuns/BlackSabbath/Paranoid/07 Rat Salad.opus
+8:Albuns/BlackSabbath/MasterOfReality/01 Sweet Leaf.opus
+9:Albuns/BlackSabbath/MasterOfReality/02 After Forever.opus
+10:Albuns/BlackSabbath/MasterOfReality/03 Embryo.opus
+11:Albuns/BlackSabbath/MasterOfReality/04 Children of the Grave.opus
+12:Albuns/BlackSabbath/MasterOfReality/05 Orchid.opus
+13:Albuns/BlackSabbath/MasterOfReality/06 Lord of This World.opus
+14:Albuns/BlackSabbath/MasterOfReality/07 Solitude.opus
+15:Albuns/BlackSabbath/MasterOfReality/08 Into the Void.opus
+16:Albuns/BlackSabbath/Vol.4/01 Wheels of Confusion _ The Straightener.opus
+17:Albuns/BlackSabbath/Vol.4/02 Tomorrow's Dream.opus
+18:Albuns/BlackSabbath/Vol.4/03 Changes.opus
+19:Albuns/BlackSabbath/Vol.4/04 FX.opus
+20:Albuns/BlackSabbath/Vol.4/05 Supernaut.opus
+21:Albuns/BlackSabbath/Vol.4/06 Snowblind.opus
+22:Albuns/BlackSabbath/Vol.4/07 Cornucopia.opus
+23:Albuns/BlackSabbath/Vol.4/08 Laguna Sunrise.opus
+24:Albuns/BlackSabbath/Vol.4/09 St. Vitus' Dance.opus
+25:Albuns/BlackSabbath/Vol.4/10 Under the Sun _ Every Day Comes and Goes.opus
+26:Albuns/BlackSabbath/Sabotage/01 Hole in the Sky.opus
+27:Albuns/BlackSabbath/Sabotage/02 Don't Start (Too Late).opus
+28:Albuns/BlackSabbath/Sabotage/03 Megalomania.opus
+29:Albuns/BlackSabbath/Sabotage/04 Thrill of It All.opus
+30:Albuns/BlackSabbath/Sabotage/05 Symptom of the Universe.opus
+31:Albuns/BlackSabbath/Sabotage/06 Supertzar.opus
+32:Albuns/BlackSabbath/Sabotage/07 Am I Going Insane (Radio).opus
+33:Albuns/BlackSabbath/Sabotage/08 The Writ.opus
+34:Albuns/BlackSabbath/BlackSabbath/01 Black Sabbath.opus
+35:Albuns/BlackSabbath/BlackSabbath/02 The Wizard.opus
+36:Albuns/BlackSabbath/BlackSabbath/03 Behind the Wall of Sleep.opus
+37:Albuns/BlackSabbath/BlackSabbath/04 N.I.B..opus
+38:Albuns/BlackSabbath/BlackSabbath/05 Evil Woman.opus
+39:Albuns/BlackSabbath/BlackSabbath/06 Sleeping Village.opus
+40:Albuns/BlackSabbath/BlackSabbath/07 Warning.opus
+41:Albuns/BlackSabbath/BlackSabbath/08 Wicked World.opus
+42:Albuns/BlackSabbath/HeavenAndHell/1-01 Neon Knights.opus
+43:Albuns/BlackSabbath/HeavenAndHell/1-02 Children of the Sea.opus
+44:Albuns/BlackSabbath/HeavenAndHell/1-03 Lady Evil.opus
+45:Albuns/BlackSabbath/HeavenAndHell/1-04 Heaven and Hell.opus
+46:Albuns/BlackSabbath/HeavenAndHell/1-05 Wishing Well.opus
+47:Albuns/BlackSabbath/HeavenAndHell/1-06 Die Young.opus
+48:Albuns/BlackSabbath/HeavenAndHell/1-07 Walk Away.opus
+49:Albuns/BlackSabbath/HeavenAndHell/1-08 Lonely Is the Word.opus
+50:Albuns/BlackSabbath/13/01 End of the Beginning.opus
+51:Albuns/BlackSabbath/13/02 God Is Dead_.opus
+52:Albuns/BlackSabbath/13/03 Loner.opus
+53:Albuns/BlackSabbath/13/04 Zeitgeist.opus
+54:Albuns/BlackSabbath/13/05 Age of Reason.opus
+55:Albuns/BlackSabbath/13/06 Live Forever.opus
+56:Albuns/BlackSabbath/13/07 Damaged Soul.opus
+57:Albuns/BlackSabbath/13/08 Dear Father.opus
+58:Albuns/BlackSabbath/13/01 End of the Beginning.opus
+59:Albuns/BlackSabbath/13/02 God Is Dead_.opus
+60:Albuns/BlackSabbath/13/03 Loner.opus
+61:Albuns/BlackSabbath/13/04 Zeitgeist.opus
+62:Albuns/BlackSabbath/13/05 Age of Reason.opus
+63:Albuns/BlackSabbath/13/06 Live Forever.opus
+64:Albuns/BlackSabbath/13/07 Damaged Soul.opus
+65:Albuns/BlackSabbath/13/08 Dear Father.opus
+66:Albuns/BlackSabbath/BlackSabbath/01 Black Sabbath.opus
+67:Albuns/BlackSabbath/BlackSabbath/02 The Wizard.opus
+68:Albuns/BlackSabbath/BlackSabbath/03 Behind the Wall of Sleep.opus
+69:Albuns/BlackSabbath/BlackSabbath/04 N.I.B..opus
+70:Albuns/BlackSabbath/BlackSabbath/05 Evil Woman.opus
+71:Albuns/BlackSabbath/BlackSabbath/06 Sleeping Village.opus
+72:Albuns/BlackSabbath/BlackSabbath/07 Warning.opus
+73:Albuns/BlackSabbath/BlackSabbath/08 Wicked World.opus
+74:Albuns/BlackSabbath/HeavenAndHell/1-01 Neon Knights.opus
+75:Albuns/BlackSabbath/HeavenAndHell/1-02 Children of the Sea.opus
+76:Albuns/BlackSabbath/HeavenAndHell/1-03 Lady Evil.opus
+77:Albuns/BlackSabbath/HeavenAndHell/1-04 Heaven and Hell.opus
+78:Albuns/BlackSabbath/HeavenAndHell/1-05 Wishing Well.opus
+79:Albuns/BlackSabbath/HeavenAndHell/1-06 Die Young.opus
+80:Albuns/BlackSabbath/HeavenAndHell/1-07 Walk Away.opus
+81:Albuns/BlackSabbath/HeavenAndHell/1-08 Lonely Is the Word.opus
+82:Albuns/BlackSabbath/MasterOfReality/01 Sweet Leaf.opus
+83:Albuns/BlackSabbath/MasterOfReality/02 After Forever.opus
+84:Albuns/BlackSabbath/MasterOfReality/03 Embryo.opus
+85:Albuns/BlackSabbath/MasterOfReality/04 Children of the Grave.opus
+86:Albuns/BlackSabbath/MasterOfReality/05 Orchid.opus
+87:Albuns/BlackSabbath/MasterOfReality/06 Lord of This World.opus
+88:Albuns/BlackSabbath/MasterOfReality/07 Solitude.opus
+89:Albuns/BlackSabbath/MasterOfReality/08 Into the Void.opus
+90:Albuns/BlackSabbath/Paranoid/01 War Pigs.opus
+91:Albuns/BlackSabbath/Paranoid/02 Paranoid.opus
+92:Albuns/BlackSabbath/Paranoid/03 Planet Caravan.opus
+93:Albuns/BlackSabbath/Paranoid/04 Iron Man.opus
+94:Albuns/BlackSabbath/Paranoid/05 Electric Funeral.opus
+95:Albuns/BlackSabbath/Paranoid/06 Hand of Doom.opus
+96:Albuns/BlackSabbath/Paranoid/07 Rat Salad.opus
+97:Albuns/BlackSabbath/Paranoid/08 Fairies Wear Boots.opus
+98:Albuns/BlackSabbath/Sabotage/01 Hole in the Sky.opus
+99:Albuns/BlackSabbath/Sabotage/02 Don't Start (Too Late).opus
+100:Albuns/BlackSabbath/Sabotage/03 Megalomania.opus
+101:Albuns/BlackSabbath/Sabotage/04 Thrill of It All.opus
+102:Albuns/BlackSabbath/Sabotage/05 Symptom of the Universe.opus
+103:Albuns/BlackSabbath/Sabotage/06 Supertzar.opus
+104:Albuns/BlackSabbath/Sabotage/07 Am I Going Insane (Radio).opus
+105:Albuns/BlackSabbath/Sabotage/08 The Writ.opus
+106:Albuns/BlackSabbath/Vol.4/01 Wheels of Confusion _ The Straightener.opus
+107:Albuns/BlackSabbath/Vol.4/02 Tomorrow's Dream.opus
+108:Albuns/BlackSabbath/Vol.4/03 Changes.opus
+109:Albuns/BlackSabbath/Vol.4/04 FX.opus
+110:Albuns/BlackSabbath/Vol.4/05 Supernaut.opus
+111:Albuns/BlackSabbath/Vol.4/06 Snowblind.opus
+112:Albuns/BlackSabbath/Vol.4/07 Cornucopia.opus
+113:Albuns/BlackSabbath/Vol.4/08 Laguna Sunrise.opus
+114:Albuns/BlackSabbath/Vol.4/09 St. Vitus' Dance.opus
+115:Albuns/BlackSabbath/Vol.4/10 Under the Sun _ Every Day Comes and Goes.opus
+116:Albuns/Boris/Boris at Last - Feedbacker/Feedbacker_Pt._1.opus
+117:Albuns/Boris/Boris at Last - Feedbacker/Feedbacker_Pt._2.opus
+118:Albuns/Boris/Boris at Last - Feedbacker/Feedbacker_Pt._3.opus
+119:Albuns/Boris/Boris at Last - Feedbacker/Feedbacker_Pt._4.opus
+120:Albuns/Boris/Boris at Last - Feedbacker/Feedbacker_Pt._5.opus
+121:Albuns/Mariya Takeuchi/Plastic Love/Plastic_Love_Official_Music_Video.webm
+122:Albuns/Metallica/AndJusticeForAll/01 Blackened.opus
+123:Albuns/Metallica/AndJusticeForAll/02 ...And Justice for All.opus
+124:Albuns/Metallica/AndJusticeForAll/03 Eye of the Beholder.opus
+125:Albuns/Metallica/AndJusticeForAll/04 One.opus
+126:Albuns/Metallica/AndJusticeForAll/05 The Shortest Straw.opus
+127:Albuns/Metallica/AndJusticeForAll/06 Harvester of Sorrow.opus
+128:Albuns/Metallica/AndJusticeForAll/07 The Frayed Ends of Sanity.opus
+129:Albuns/Metallica/AndJusticeForAll/08 To Live Is to Die.opus
+130:Albuns/Metallica/AndJusticeForAll/09 Dyers Eve.opus
+131:Albuns/Metallica/DeathMagnetic/Broken_Beat_Scarred.opus
+132:Albuns/Metallica/DeathMagnetic/Cyanide.opus
+133:Albuns/Metallica/DeathMagnetic/Metallica_-_All_Nightmare_Long_Official_Music_Video.opus
+134:Albuns/Metallica/DeathMagnetic/Metallica_-_The_Day_That_Never_Comes_Official_Music_Video.opus
+135:Albuns/Metallica/DeathMagnetic/My_Apocalypse.opus
+136:Albuns/Metallica/DeathMagnetic/Suicide_Redemption.opus
+137:Albuns/Metallica/DeathMagnetic/That_Was_Just_Your_Life.opus
+138:Albuns/Metallica/DeathMagnetic/The_End_Of_The_Line.opus
+139:Albuns/Metallica/DeathMagnetic/The_Judas_Kiss.opus
+140:Albuns/Metallica/DeathMagnetic/The_Unforgiven_III.opus
+141:Albuns/Metallica/DeathMagnetic/01 That Was Just Your Life.opus
+142:Albuns/Metallica/DeathMagnetic/02 The End of the Line.opus
+143:Albuns/Metallica/DeathMagnetic/03 Broken, Beat & Scarred.opus
+144:Albuns/Metallica/DeathMagnetic/04 The Day That Never Comes.opus
+145:Albuns/Metallica/DeathMagnetic/05 All Nightmare Long.opus
+146:Albuns/Metallica/DeathMagnetic/06 Cyanide.opus
+147:Albuns/Metallica/DeathMagnetic/07 The Unforgiven III.opus
+148:Albuns/Metallica/DeathMagnetic/08 The Judas Kiss.opus
+149:Albuns/Metallica/DeathMagnetic/09 Suicide & Redemption.opus
+150:Albuns/Metallica/DeathMagnetic/10 My Apocalypse.opus
+151:Albuns/Metallica/KillEmAll/Anesthesia_--Pulling_Teeth_Remastered.opus
+152:Albuns/Metallica/KillEmAll/Hit_The_Lights_Remastered.opus
+153:Albuns/Metallica/KillEmAll/Jump_In_The_Fire_Remastered.opus
+154:Albuns/Metallica/KillEmAll/Metal_Militia_Remastered.opus
+155:Albuns/Metallica/KillEmAll/Motorbreath_Remastered.opus
+156:Albuns/Metallica/KillEmAll/No_Remorse_Remastered.opus
+157:Albuns/Metallica/KillEmAll/Phantom_Lord_Remastered.opus
+158:Albuns/Metallica/KillEmAll/Seek_Destroy_Remastered.opus
+159:Albuns/Metallica/KillEmAll/The_Four_Horsemen_Remastered.opus
+160:Albuns/Metallica/KillEmAll/Whiplash_Remastered.opus
+161:Albuns/Metallica/KillEmAll/01 Hit the Lights.opus
+162:Albuns/Metallica/KillEmAll/02 The Four Horsemen.opus
+163:Albuns/Metallica/KillEmAll/03 Motorbreath.opus
+164:Albuns/Metallica/KillEmAll/04 Jump in the Fire.opus
+165:Albuns/Metallica/KillEmAll/05 (Anesthesia) - Pulling Teeth.opus
+166:Albuns/Metallica/KillEmAll/06 Whiplash.opus
+167:Albuns/Metallica/KillEmAll/07 Phantom Lord.opus
+168:Albuns/Metallica/KillEmAll/08 No Remorse.opus
+169:Albuns/Metallica/KillEmAll/09 Seek & Destroy.opus
+170:Albuns/Metallica/KillEmAll/10 Metal Militia.opus
+171:Albuns/Metallica/Load/01 Ain't My Bitch.opus
+172:Albuns/Metallica/Load/02 2 X 4.opus
+173:Albuns/Metallica/Load/03 The House Jack Built.opus
+174:Albuns/Metallica/Load/04 Until It Sleeps.opus
+175:Albuns/Metallica/Load/05 King Nothing.opus
+176:Albuns/Metallica/Load/06 Hero of the Day.opus
+177:Albuns/Metallica/Load/07 Bleeding Me.opus
+178:Albuns/Metallica/Load/08 Cure.opus
+179:Albuns/Metallica/Load/09 Poor Twisted Me.opus
+180:Albuns/Metallica/Load/10 Wasting My Hate.opus
+181:Albuns/Metallica/Load/11 Mama Said.opus
+182:Albuns/Metallica/Load/12 Thorn Within.opus
+183:Albuns/Metallica/Load/13 Ronnie.opus
+184:Albuns/Metallica/Load/14 The Outlaw Torn.opus
+185:Albuns/Metallica/MasterOfPuppets/Battery (Remastered) [vA1nlwTbCvg].opus
+186:Albuns/Metallica/MasterOfPuppets/Damage, Inc. (Remastered) [SOCzjIsrTkk].opus
+187:Albuns/Metallica/MasterOfPuppets/Leper Messiah (Remastered) [zMdVb_HjxFQ].opus
+188:Albuns/Metallica/MasterOfPuppets/Metallica： Disposable Heroes (Remastered) [jtNrx1c3Xh8].opus
+189:Albuns/Metallica/MasterOfPuppets/Metallica： Master of Puppets (Official Lyric Video) [6xjJ2XIbGRk].opus
+190:Albuns/Metallica/MasterOfPuppets/Orion (Remastered) [TydZ4NAXMic].opus
+191:Albuns/Metallica/MasterOfPuppets/The Thing That Should Not Be (Remastered) [b_ObqZtxuj0].opus
+192:Albuns/Metallica/MasterOfPuppets/Welcome Home (Sanitarium) (Remastered) [ws36JBnXRuA].opus
+193:Albuns/Metallica/MasterOfPuppets/01 Battery.opus
+194:Albuns/Metallica/MasterOfPuppets/02 Master of Puppets.opus
+195:Albuns/Metallica/MasterOfPuppets/03 The Thing That Should Not Be.opus
+196:Albuns/Metallica/MasterOfPuppets/04 Welcome Home (Sanitarium).opus
+197:Albuns/Metallica/MasterOfPuppets/05 Disposable Heroes.opus
+198:Albuns/Metallica/MasterOfPuppets/06 Leper Messiah.opus
+199:Albuns/Metallica/MasterOfPuppets/07 Orion.opus
+200:Albuns/Metallica/MasterOfPuppets/08 Damage, Inc..opus
+201:Albuns/Metallica/Metallica/01 Enter Sandman.opus
+202:Albuns/Metallica/Metallica/02 Sad but True.opus
+203:Albuns/Metallica/Metallica/03 Holier Than Thou.opus
+204:Albuns/Metallica/Metallica/04 The Unforgiven.opus
+205:Albuns/Metallica/Metallica/05 Wherever I May Roam.opus
+206:Albuns/Metallica/Metallica/06 Don't Tread on Me.opus
+207:Albuns/Metallica/Metallica/07 Through the Never.opus
+208:Albuns/Metallica/Metallica/08 Nothing Else Matters.opus
+209:Albuns/Metallica/Metallica/09 Of Wolf and Man.opus
+210:Albuns/Metallica/Metallica/10 The God That Failed.opus
+211:Albuns/Metallica/Metallica/11 My Friend of Misery.opus
+212:Albuns/Metallica/Metallica/12 The Struggle Within.opus
+213:Albuns/Metallica/Reload/01 Fuel.opus
+214:Albuns/Metallica/Reload/02 The Memory Remains.opus
+215:Albuns/Metallica/Reload/03 Devil's Dance.opus
+216:Albuns/Metallica/Reload/04 The Unforgiven II.opus
+217:Albuns/Metallica/Reload/05 Better Than You.opus
+218:Albuns/Metallica/Reload/06 Slither.opus
+219:Albuns/Metallica/Reload/07 Carpe Diem Baby.opus
+220:Albuns/Metallica/Reload/08 Bad Seed.opus
+221:Albuns/Metallica/Reload/09 Where the Wild Things Are.opus
+222:Albuns/Metallica/Reload/10 Prince Charming.opus
+223:Albuns/Metallica/Reload/11 Low Man's Lyric.opus
+224:Albuns/Metallica/Reload/12 Attitude.opus
+225:Albuns/Metallica/Reload/13 Fixxxer.opus
+226:Albuns/Metallica/RideTheLightning/Creeping_Death_Remastered.opus
+227:Albuns/Metallica/RideTheLightning/Escape_Remastered.opus
+228:Albuns/Metallica/RideTheLightning/Fade_To_Black_Remastered.opus
+229:Albuns/Metallica/RideTheLightning/Fight_Fire_With_Fire_Remastered.opus
+230:Albuns/Metallica/RideTheLightning/For_Whom_The_Bell_Tolls_Remastered.opus
+231:Albuns/Metallica/RideTheLightning/Ride_The_Lightning_Remastered.opus
+232:Albuns/Metallica/RideTheLightning/The_Call_Of_Ktulu_Remastered.opus
+233:Albuns/Metallica/RideTheLightning/01 Fight Fire With Fire.opus
+234:Albuns/Metallica/RideTheLightning/02 Ride the Lightning.opus
+235:Albuns/Metallica/RideTheLightning/03 For Whom the Bell Tolls.opus
+236:Albuns/Metallica/RideTheLightning/04 Fade to Black.opus
+237:Albuns/Metallica/RideTheLightning/06 Escape.opus
+238:Albuns/Metallica/RideTheLightning/07 Creeping Death.opus
+239:Albuns/Metallica/RideTheLightning/08 The Call of Ktulu.opus
+240:Albuns/Midori/Aratamemashite Hajimemashite Midori Desu/Chiharunokoi.webm
+241:Albuns/Midori/Aratamemashite Hajimemashite Midori Desu/Gobyoushi.webm
+242:Albuns/Midori/Aratamemashite Hajimemashite Midori Desu/Himitsunofutari.webm
+243:Albuns/Midori/Aratamemashite Hajimemashite Midori Desu/Howlingjigoku.webm
+244:Albuns/Midori/Aratamemashite Hajimemashite Midori Desu/Kanashiihibi.webm
+245:Albuns/Midori/Aratamemashite Hajimemashite Midori Desu/Konjounashiatashi_ahobokekasu.webm
+246:Albuns/Midori/Aratamemashite Hajimemashite Midori Desu/Muyokunomuryoku.webm
+247:Albuns/Midori/Aratamemashite Hajimemashite Midori Desu/Osaru.webm
+248:Albuns/Midori/Aratamemashite Hajimemashite Midori Desu/Suki.webm
+249:Albuns/Midori/Aratamemashite Hajimemashite Midori Desu/Yukikosan.webm
+250:Albuns/RageAgainstTheMachine/EvilEmpire/01 People of the Sun.opus
+251:Albuns/RageAgainstTheMachine/EvilEmpire/02 Bulls on Parade.opus
+252:Albuns/RageAgainstTheMachine/EvilEmpire/03 Vietnow.opus
+253:Albuns/RageAgainstTheMachine/EvilEmpire/04 Revolver.opus
+254:Albuns/RageAgainstTheMachine/EvilEmpire/05 Snakecharmer.opus
+255:Albuns/RageAgainstTheMachine/EvilEmpire/06 Tire Me.opus
+256:Albuns/RageAgainstTheMachine/EvilEmpire/07 Down Rodeo.opus
+257:Albuns/RageAgainstTheMachine/EvilEmpire/08 Without a Face.opus
+258:Albuns/RageAgainstTheMachine/EvilEmpire/09 Wind Below.opus
+259:Albuns/RageAgainstTheMachine/EvilEmpire/10 Roll Right.opus
+260:Albuns/RageAgainstTheMachine/EvilEmpire/11 Year of tha Boomerang.opus
+261:Albuns/RageAgainstTheMachine/RageAgainstTheMachine/01 Bombtrack.opus
+262:Albuns/RageAgainstTheMachine/RageAgainstTheMachine/02 Killing in the Name.opus
+263:Albuns/RageAgainstTheMachine/RageAgainstTheMachine/03 Take the Power Back.opus
+264:Albuns/RageAgainstTheMachine/RageAgainstTheMachine/04 Settle for Nothing.opus
+265:Albuns/RageAgainstTheMachine/RageAgainstTheMachine/05 Bullet in the Head.opus
+266:Albuns/RageAgainstTheMachine/RageAgainstTheMachine/06 Know Your Enemy.opus
+267:Albuns/RageAgainstTheMachine/RageAgainstTheMachine/07 Wake Up.opus
+268:Albuns/RageAgainstTheMachine/RageAgainstTheMachine/08 Fistful of Steel.opus
+269:Albuns/RageAgainstTheMachine/RageAgainstTheMachine/09 Township Rebellion.opus
+270:Albuns/RageAgainstTheMachine/RageAgainstTheMachine/10 Freedom.opus
+271:Albuns/RageAgainstTheMachine/TheBattleOfLosAngeles/01 Testify.opus
+272:Albuns/RageAgainstTheMachine/TheBattleOfLosAngeles/02 Guerrilla Radio.opus
+273:Albuns/RageAgainstTheMachine/TheBattleOfLosAngeles/03 Calm Like a Bomb.opus
+274:Albuns/RageAgainstTheMachine/TheBattleOfLosAngeles/04 Mic Check.opus
+275:Albuns/RageAgainstTheMachine/TheBattleOfLosAngeles/05 Sleep Now in the Fire.opus
+276:Albuns/RageAgainstTheMachine/TheBattleOfLosAngeles/06 Born of a Broken Man.opus
+277:Albuns/RageAgainstTheMachine/TheBattleOfLosAngeles/07 Born as Ghosts.opus
+278:Albuns/RageAgainstTheMachine/TheBattleOfLosAngeles/08 Maria.opus
+279:Albuns/RageAgainstTheMachine/TheBattleOfLosAngeles/09 Voice of the Voiceless.opus
+280:Albuns/RageAgainstTheMachine/TheBattleOfLosAngeles/10 New Millennium Homes.opus
+281:Albuns/RageAgainstTheMachine/TheBattleOfLosAngeles/11 Ashes in the Fall.opus
+282:Albuns/RageAgainstTheMachine/TheBattleOfLosAngeles/12 War Within a Breath.opus
+283:Albuns/Sepultura/Roots/01 Roots Bloody Roots.opus
+284:Albuns/Sepultura/Roots/02 Attitude.opus
+285:Albuns/Sepultura/Roots/03 Cut-Throat.opus
+286:Albuns/Sepultura/Roots/04 Ratamahatta.opus
+287:Albuns/Sepultura/Roots/05 Breed Apart.opus
+288:Albuns/Sepultura/Roots/06 Straighthate.opus
+289:Albuns/Sepultura/Roots/07 Spit.opus
+290:Albuns/Sepultura/Roots/08 Lookaway.opus
+291:Albuns/Sepultura/Roots/09 Dusted.opus
+292:Albuns/Sepultura/Roots/10 Born Stubborn.opus
+293:Albuns/Sepultura/Roots/11 Jasco.opus
+294:Albuns/Sepultura/Roots/12 Itsari.opus
+295:Albuns/Sepultura/Roots/13 Ambush.opus
+296:Albuns/Sepultura/Roots/14 Endangered Species.opus
+297:Albuns/Sepultura/Roots/15 Dictatorshit.opus
+298:Albuns/Sepultura/Roots/16 Canyon Jam.opus
+299:Albuns/Sepultura/Schizophrenia/01 Intro.opus
+300:Albuns/Sepultura/Schizophrenia/02 From the Past Comes the Storms.opus
+301:Albuns/Sepultura/Schizophrenia/03 To the Wall.opus
+302:Albuns/Sepultura/Schizophrenia/04 Escape to the Void.opus
+303:Albuns/Sepultura/Schizophrenia/05 Inquisition Symphony.opus
+304:Albuns/Sepultura/Schizophrenia/06 Screams Behind the Shadows.opus
+305:Albuns/Sepultura/Schizophrenia/07 Septic Schizo.opus
+306:Albuns/Sepultura/Schizophrenia/08 The Abyss.opus
+307:Albuns/Sepultura/Schizophrenia/09 R.I.P. (Rest in Pain).opus
+308:Albuns/Sepultura/Schizophrenia/10 Troops of Doom.opus
+309:Albuns/Sepultura/Schizophrenia/11 The Past Reborns the Storms (demo version).opus
+310:Albuns/Sepultura/Schizophrenia/12 Septic Schizo (rough mix).opus
+311:Albuns/Sepultura/Schizophrenia/13 To the Wall (rough mix).opus
+312:Albuns/Sepultura/TheBestOfSepultura/01 Troops of Doom.opus
+313:Albuns/Sepultura/TheBestOfSepultura/02 Beneath the Remains.opus
+314:Albuns/Sepultura/TheBestOfSepultura/03 Inner Self.opus
+315:Albuns/Sepultura/TheBestOfSepultura/04 Arise.opus
+316:Albuns/Sepultura/TheBestOfSepultura/05 Dead Embryonic Cells.opus
+317:Albuns/Sepultura/TheBestOfSepultura/06 Desperate Cry.opus
+318:Albuns/Sepultura/TheBestOfSepultura/07 Refuse_Resist.opus
+319:Albuns/Sepultura/TheBestOfSepultura/08 Territory.opus
+320:Albuns/Sepultura/TheBestOfSepultura/09 Slave New World.opus
+321:Albuns/Sepultura/TheBestOfSepultura/10 Biotech Is Godzilla.opus
+322:Albuns/Sepultura/TheBestOfSepultura/11 Roots Bloody Roots.opus
+323:Albuns/Sepultura/TheBestOfSepultura/12 Attitude.opus
+324:Albuns/Sepultura/TheBestOfSepultura/13 Ratamahatta.opus
+325:Albuns/Sheena Ringo/Kalk samen kuri no hana/01 宗教.ogg
+326:Albuns/Sheena Ringo/Kalk samen kuri no hana/02 ドツペルゲンガー.ogg
+327:Albuns/Sheena Ringo/Kalk samen kuri no hana/03 迷彩.ogg
+328:Albuns/Sheena Ringo/Kalk samen kuri no hana/04 おだいじに.ogg
+329:Albuns/Sheena Ringo/Kalk samen kuri no hana/05 やつつけ仕事 - 大名遊ビ編.ogg
+330:Albuns/Sheena Ringo/Kalk samen kuri no hana/06 茎 - 日本語バージョン.ogg
+331:Albuns/Sheena Ringo/Kalk samen kuri no hana/07 とりこし苦労.ogg
+332:Albuns/Sheena Ringo/Kalk samen kuri no hana/08 おこのみで.ogg
+333:Albuns/Sheena Ringo/Kalk samen kuri no hana/09 意識.ogg
+334:Albuns/Sheena Ringo/Kalk samen kuri no hana/10 ポルターガイスト.ogg
+335:Albuns/Sheena Ringo/Kalk samen kuri no hana/11 葬列.ogg
+336:Albuns/Sheena Ringo/Shouso Strip/Benkai_Debussy_-Excuse_Debussy-.webm
+337:Albuns/Sheena Ringo/Shouso Strip/Byoushou_Public_-Sickbed_Public-.webm
+338:Albuns/Sheena Ringo/Shouso Strip/Gips.webm
+339:Albuns/Sheena Ringo/Shouso Strip/Honnou_-Instinct-.webm
+340:Albuns/Sheena Ringo/Shouso Strip/Identity.webm
+341:Albuns/Sheena Ringo/Shouso Strip/Izonshou_-I_Am_An_Addict-.webm
+342:Albuns/Sheena Ringo/Shouso Strip/Kyogenshou_-I_Am_A_Liar-.webm
+343:Albuns/Sheena Ringo/Shouso Strip/Sakana_-Titbits-.webm
+344:Albuns/Sheena Ringo/Shouso Strip/Stoicism.webm
+345:Albuns/Sheena Ringo/Shouso Strip/Tsuki_Ni_Makeinu_-A_Broken_Man_And_Moonlight-.webm
+346:Albuns/Sheena Ringo/Shouso Strip/Tsumi_To_Batsu_-Crime_And_Punishment-.webm
+347:Albuns/Sheena Ringo/Shouso Strip/Yami_Ni_Furu_Ame_-A_Driving_Rain_In_Darkness-.webm
+348:Albuns/Sheena Ringo/Shouso Strip/Yokushitsu_-Bathroom-.webm
+349:Albuns/SystemOfADown/Hypnotize/01 Attack.opus
+350:Albuns/SystemOfADown/Hypnotize/02 Dreaming.opus
+351:Albuns/SystemOfADown/Hypnotize/03 Kill Rock 'n Roll.opus
+352:Albuns/SystemOfADown/Hypnotize/04 Hypnotize.opus
+353:Albuns/SystemOfADown/Hypnotize/05 Stealing Society.opus
+354:Albuns/SystemOfADown/Hypnotize/06 Tentative.opus
+355:Albuns/SystemOfADown/Hypnotize/07 U-Fig.opus
+356:Albuns/SystemOfADown/Hypnotize/08 Holy Mountains.opus
+357:Albuns/SystemOfADown/Hypnotize/09 Vicinity of Obscenity.opus
+358:Albuns/SystemOfADown/Hypnotize/10 She's Like Heroin.opus
+359:Albuns/SystemOfADown/Hypnotize/11 Lonely Day.opus
+360:Albuns/SystemOfADown/Hypnotize/12 Soldier Side.opus
+361:Albuns/SystemOfADown/Mezmerize/01 Soldier Side (intro).opus
+362:Albuns/SystemOfADown/Mezmerize/02 B.Y.O.B..opus
+363:Albuns/SystemOfADown/Mezmerize/03 Revenga.opus
+364:Albuns/SystemOfADown/Mezmerize/04 Cigaro.opus
+365:Albuns/SystemOfADown/Mezmerize/05 Radio_Video.opus
+366:Albuns/SystemOfADown/Mezmerize/06 This Cocaine Makes Me Feel Like I'm on This Song.opus
+367:Albuns/SystemOfADown/Mezmerize/07 Violent Pornography.opus
+368:Albuns/SystemOfADown/Mezmerize/08 Question!.opus
+369:Albuns/SystemOfADown/Mezmerize/09 Sad Statue.opus
+370:Albuns/SystemOfADown/Mezmerize/10 Old School Hollywood.opus
+371:Albuns/SystemOfADown/Mezmerize/11 Lost in Hollywood.opus
+372:Albuns/SystemOfADown/StealThisAlbum/01 Chic 'n' Stu.opus
+373:Albuns/SystemOfADown/StealThisAlbum/02 Innervision.opus
+374:Albuns/SystemOfADown/StealThisAlbum/03 Bubbles.opus
+375:Albuns/SystemOfADown/StealThisAlbum/04 Boom!.opus
+376:Albuns/SystemOfADown/StealThisAlbum/05 Nuguns.opus
+377:Albuns/SystemOfADown/StealThisAlbum/06 A.D.D..opus
+378:Albuns/SystemOfADown/StealThisAlbum/07 Mr. Jack.opus
+379:Albuns/SystemOfADown/StealThisAlbum/08 I-E-A-I-A-I-O.opus
+380:Albuns/SystemOfADown/StealThisAlbum/09 36.opus
+381:Albuns/SystemOfADown/StealThisAlbum/10 Pictures.opus
+382:Albuns/SystemOfADown/StealThisAlbum/11 Highway Song.opus
+383:Albuns/SystemOfADown/StealThisAlbum/12 Fuck the System.opus
+384:Albuns/SystemOfADown/StealThisAlbum/13 Ego Brain.opus
+385:Albuns/SystemOfADown/StealThisAlbum/14 Thetawaves.opus
+386:Albuns/SystemOfADown/StealThisAlbum/15 Roulette.opus
+387:Albuns/SystemOfADown/StealThisAlbum/16 Streamline.opus
+388:Albuns/SystemOfADown/Toxicity/01 Prison Song.opus
+389:Albuns/SystemOfADown/Toxicity/02 Needles.opus
+390:Albuns/SystemOfADown/Toxicity/03 Deer Dance.opus
+391:Albuns/SystemOfADown/Toxicity/04 Jet Pilot.opus
+392:Albuns/SystemOfADown/Toxicity/05 X.opus
+393:Albuns/SystemOfADown/Toxicity/06 Chop Suey!.opus
+394:Albuns/SystemOfADown/Toxicity/07 Bounce.opus
+395:Albuns/SystemOfADown/Toxicity/08 Johnny.opus
+396:Albuns/SystemOfADown/Toxicity/09 Forest.opus
+397:Albuns/SystemOfADown/Toxicity/10 ATWA.opus
+398:Albuns/SystemOfADown/Toxicity/11 Science.opus
+399:Albuns/SystemOfADown/Toxicity/12 Shimmy.opus
+400:Albuns/SystemOfADown/Toxicity/13 Toxicity.opus
+401:Albuns/SystemOfADown/Toxicity/14 Psycho.opus
+402:Albuns/SystemOfADown/Toxicity/15 Aerials.opus
+403:OST/1. The Lord Of The Rings- The Fellowship Of The Ring (OST)/01 The Lord Of The Rings (Howard Shore) - The Prophecy.opus
+404:OST/1. The Lord Of The Rings- The Fellowship Of The Ring (OST)/02 The Lord Of The Rings (Howard Shore) - Concerning Hobbits.opus
+405:OST/1. The Lord Of The Rings- The Fellowship Of The Ring (OST)/03 The Lord Of The Rings (Howard Shore) - The Shadow of the Past.opus
+406:OST/1. The Lord Of The Rings- The Fellowship Of The Ring (OST)/04 The Lord Of The Rings (Howard Shore) - The Treason of Isengard.opus
+407:OST/1. The Lord Of The Rings- The Fellowship Of The Ring (OST)/05 The Lord Of The Rings (Howard Shore) - The Black Rider.opus
+408:OST/1. The Lord Of The Rings- The Fellowship Of The Ring (OST)/06 The Lord Of The Rings (Howard Shore) - At the Sign of the Prancing Pony.opus
+409:OST/1. The Lord Of The Rings- The Fellowship Of The Ring (OST)/07 The Lord Of The Rings (Howard Shore) - A Knife In the Dark.opus
+410:OST/1. The Lord Of The Rings- The Fellowship Of The Ring (OST)/08 The Lord Of The Rings (Howard Shore) - Flight to the Ford.opus
+411:OST/1. The Lord Of The Rings- The Fellowship Of The Ring (OST)/09 The Lord Of The Rings (Howard Shore) - Many Meetings.opus
+412:OST/1. The Lord Of The Rings- The Fellowship Of The Ring (OST)/10 The Lord Of The Rings (Howard Shore) - The Council of Elrond (Theme for Aragorn and Arwen) [feat. -Aniron-].opus
+413:OST/1. The Lord Of The Rings- The Fellowship Of The Ring (OST)/11 The Lord Of The Rings (Howard Shore) - The Ring Goes South.opus
+414:OST/1. The Lord Of The Rings- The Fellowship Of The Ring (OST)/12 The Lord Of The Rings (Howard Shore) - A Journey In the Dark.opus
+415:OST/1. The Lord Of The Rings- The Fellowship Of The Ring (OST)/13 The Lord Of The Rings (Howard Shore) - The Bridge of Khazad Dum.opus
+416:OST/1. The Lord Of The Rings- The Fellowship Of The Ring (OST)/14 The Lord Of The Rings (Howard Shore) - Lothlorien (feat. -Lament for Gandalf-).opus
+417:OST/1. The Lord Of The Rings- The Fellowship Of The Ring (OST)/15 The Lord Of The Rings (Howard Shore) - The Great River.opus
+418:OST/1. The Lord Of The Rings- The Fellowship Of The Ring (OST)/16 The Lord Of The Rings (Howard Shore) - Amon Hen.opus
+419:OST/1. The Lord Of The Rings- The Fellowship Of The Ring (OST)/17 The Lord Of The Rings (Howard Shore) - The Breaking of the Fellowship (feat. -In Dreams-).opus
+420:OST/1. The Lord Of The Rings- The Fellowship Of The Ring (OST)/18 The Lord Of The Rings (Howard Shore) - May It Be (& Enya).opus
+421:OST/2. The Lord Of The Rings- The Two Towers (OST)/01 The Lord Of The Rings (Howard Shore) - Foundations of Stone.opus
+422:OST/2. The Lord Of The Rings- The Two Towers (OST)/02 The Lord Of The Rings (Howard Shore) - The Taming of Smeagol.opus
+423:OST/2. The Lord Of The Rings- The Two Towers (OST)/03 The Lord Of The Rings (Howard Shore) - The Riders of Rohan.opus
+424:OST/2. The Lord Of The Rings- The Two Towers (OST)/04 The Lord Of The Rings (Howard Shore) - The Passage of the Marshes.opus
+425:OST/2. The Lord Of The Rings- The Two Towers (OST)/05 The Lord Of The Rings (Howard Shore) - The Uruk-hai.opus
+426:OST/2. The Lord Of The Rings- The Two Towers (OST)/06 The Lord Of The Rings (Howard Shore) - The King of the Golden Hall.opus
+427:OST/2. The Lord Of The Rings- The Two Towers (OST)/07 The Lord Of The Rings (Howard Shore) - The Black Gate Is Closed.opus
+428:OST/2. The Lord Of The Rings- The Two Towers (OST)/08 The Lord Of The Rings (Howard Shore) - Evenstar.opus
+429:OST/2. The Lord Of The Rings- The Two Towers (OST)/09 The Lord Of The Rings (Howard Shore) - The White Rider.opus
+430:OST/2. The Lord Of The Rings- The Two Towers (OST)/10 The Lord Of The Rings (Howard Shore) - Treebeard.opus
+431:OST/2. The Lord Of The Rings- The Two Towers (OST)/11 The Lord Of The Rings (Howard Shore) - The Leave Taking.opus
+432:OST/2. The Lord Of The Rings- The Two Towers (OST)/12 The Lord Of The Rings (Howard Shore) - Helm's Deep.opus
+433:OST/2. The Lord Of The Rings- The Two Towers (OST)/13 The Lord Of The Rings (Howard Shore) - The Forbidden Pool.opus
+434:OST/2. The Lord Of The Rings- The Two Towers (OST)/14 The Lord Of The Rings (Howard Shore) - Breath of Life.opus
+435:OST/2. The Lord Of The Rings- The Two Towers (OST)/15 The Lord Of The Rings (Howard Shore) - The Hornburg.opus
+436:OST/2. The Lord Of The Rings- The Two Towers (OST)/16 The Lord Of The Rings (Howard Shore) - Forth Eorlingas.opus
+437:OST/2. The Lord Of The Rings- The Two Towers (OST)/17 The Lord Of The Rings (Howard Shore) - Isengard Unleashed.opus
+438:OST/2. The Lord Of The Rings- The Two Towers (OST)/18 The Lord Of The Rings (Howard Shore) - Samwise the Brave.opus
+439:OST/2. The Lord Of The Rings- The Two Towers (OST)/19 The Lord Of The Rings (Howard Shore) - Gollum's Song (Emiliana Torrini).opus
+440:OST/2. The Lord Of The Rings- The Two Towers (OST)/20 The Lord Of The Rings (Howard Shore) - Farewell to Lorien (Bonus Track).opus
+441:OST/3. The Lord Of The Rings- The Return Of The King (OST)/01 The Lord Of The Rings (Howard Shore) - A Storm Is Coming.opus
+442:OST/3. The Lord Of The Rings- The Return Of The King (OST)/02 The Lord Of The Rings (Howard Shore) - Hope and Memory.opus
+443:OST/3. The Lord Of The Rings- The Return Of The King (OST)/03 The Lord Of The Rings (Howard Shore) - Minas Tirith (& Ben del Maestro).opus
+444:OST/3. The Lord Of The Rings- The Return Of The King (OST)/04 The Lord Of The Rings (Howard Shore) - The White Tree.opus
+445:OST/3. The Lord Of The Rings- The Return Of The King (OST)/05 The Lord Of The Rings (Howard Shore) - The Steward of Gondor (& Billy Boyd).opus
+446:OST/3. The Lord Of The Rings- The Return Of The King (OST)/06 The Lord Of The Rings (Howard Shore) - Minas Morgul.opus
+447:OST/3. The Lord Of The Rings- The Return Of The King (OST)/07 The Lord Of The Rings (Howard Shore) - The Ride of the Rohirrim.opus
+448:OST/3. The Lord Of The Rings- The Return Of The King (OST)/08 The Lord Of The Rings (Howard Shore) - Twilight and Shadow (& Renée Fleming).opus
+449:OST/3. The Lord Of The Rings- The Return Of The King (OST)/09 The Lord Of The Rings (Howard Shore) - Cirith Ungol.opus
+450:OST/3. The Lord Of The Rings- The Return Of The King (OST)/10 The Lord Of The Rings (Howard Shore) - Anduril.opus
+451:OST/3. The Lord Of The Rings- The Return Of The King (OST)/11 The Lord Of The Rings (Howard Shore) - Shelob's Lair.opus
+452:OST/3. The Lord Of The Rings- The Return Of The King (OST)/12 The Lord Of The Rings (Howard Shore) - Ash and Smoke.opus
+453:OST/3. The Lord Of The Rings- The Return Of The King (OST)/13 The Lord Of The Rings (Howard Shore) - The Fields of the Pelenor.opus
+454:OST/3. The Lord Of The Rings- The Return Of The King (OST)/14 The Lord Of The Rings (Howard Shore) - Hope Fails.opus
+455:OST/3. The Lord Of The Rings- The Return Of The King (OST)/15 The Lord Of The Rings (Howard Shore) - The Black Gate Opens (& Sir James Galway).opus
+456:OST/3. The Lord Of The Rings- The Return Of The King (OST)/16 The Lord Of The Rings (Howard Shore) - The End of All Things (& Renée Fleming).opus
+457:OST/3. The Lord Of The Rings- The Return Of The King (OST)/17 The Lord Of The Rings (Howard Shore) - The Return of the King (& Sir James Galway, Viggo Mortensen and Renee Fleming).opus
+458:OST/3. The Lord Of The Rings- The Return Of The King (OST)/18 The Lord Of The Rings (Howard Shore) - The Grey Havens (& Sir James Galway).opus
+459:OST/3. The Lord Of The Rings- The Return Of The King (OST)/19 The Lord Of The Rings (Howard Shore) - Into the West (& Annie Lennox).opus
+460:OST/Cyberpunk 2077 OST/101-paul_leonard-morgan-v-flacon.opus
+461:OST/Cyberpunk 2077 OST/102-pt_adamczyk-extraction_action-flacon.opus
+462:OST/Cyberpunk 2077 OST/103-paul_leonard-morgan-the_rebel_path-flacon.opus
+463:OST/Cyberpunk 2077 OST/104-pt_adamczyk-the_streets_are_long-ass_gutters-flacon.opus
+464:OST/Cyberpunk 2077 OST/105-marcin_przybylowicz-outsider_no_more-flacon.opus
+465:OST/Cyberpunk 2077 OST/106-marcin_przybylowicz-cloudy_day-flacon.opus
+466:OST/Cyberpunk 2077 OST/107-pt_adamczyk-wushu_dolls-flacon.opus
+467:OST/Cyberpunk 2077 OST/108-pt_adamczyk-scavenger_hunt-flacon.opus
+468:OST/Cyberpunk 2077 OST/109-marcin_przybylowicz-musorshchiki-flacon.opus
+469:OST/Cyberpunk 2077 OST/110-paul_leonard-morgan-close_probing-flacon.opus
+470:OST/Cyberpunk 2077 OST/111-paul_leonard-morgan-theres_gonna_be_a_parade-flacon.opus
+471:OST/Cyberpunk 2077 OST/112-pt_adamczyk-trouble_finds_trouble-flacon.opus
+472:OST/Cyberpunk 2077 OST/113-pt_adamczyk-you_shall_never_have_to_forgive_me_again-flacon.opus
+473:OST/Cyberpunk 2077 OST/114-pt_adamczyk-code_red_initiated-flacon.opus
+474:OST/Cyberpunk 2077 OST/115-marcin_przybylowicz-the_heist-flacon.opus
+475:OST/Cyberpunk 2077 OST/116-marcin_przybylowicz-streetfighters-flacon.opus
+476:OST/Cyberpunk 2077 OST/117-paul_leonard-morgan-patri(di)ots-flacon.opus
+477:OST/Cyberpunk 2077 OST/118-pt_adamczyk-mining_minds-flacon.opus
+478:OST/Cyberpunk 2077 OST/119-marcin_przybylowicz-rite_of_passage-flacon.opus
+479:OST/Cyberpunk 2077 OST/201-marcin_przybylowicz-the_voice_in_my_head-flacon.opus
+480:OST/Cyberpunk 2077 OST/202-paul_leonard-morgan-modern_anthill-flacon.opus
+481:OST/Cyberpunk 2077 OST/203-pt_adamczyk-the_sacred_and_the_profane-flacon.opus
+482:OST/Cyberpunk 2077 OST/204-marcin_przybylowicz-kang_tao_down-flacon.opus
+483:OST/Cyberpunk 2077 OST/205-marcin_przybylowicz-cyberwildlife_park-flacon.opus
+484:OST/Cyberpunk 2077 OST/206-pt_adamczyk-consumer_cathedral-flacon.opus
+485:OST/Cyberpunk 2077 OST/207-paul_leonard-morgan-juiced_up-flacon.opus
+486:OST/Cyberpunk 2077 OST/208-marcin_przybylowicz-bells_of_laguna_bend-flacon.opus
+487:OST/Cyberpunk 2077 OST/209-pt_adamczyk-urban_downunder-flacon.opus
+488:OST/Cyberpunk 2077 OST/210-marcin_przybylowicz-atlantis-flacon.opus
+489:OST/Cyberpunk 2077 OST/211-paul_leonard-morgan-cyberninja-flacon.opus
+490:OST/Cyberpunk 2077 OST/212-paul_leonard-morgan-the_suits_are_scared-flacon.opus
+491:OST/Cyberpunk 2077 OST/213-pt_adamczyk-tower_lockdown-flacon.opus
+492:OST/Cyberpunk 2077 OST/214-paul_leonard-morgan-to_hell_and_back-flacon.opus
+493:OST/Cyberpunk 2077 OST/215-paul_leonard-morgan-adam_smasher-flacon.opus
+494:OST/Cyberpunk 2077 OST/216-marcin_przybylowicz-hanako_and_yorinobu-flacon.opus
+495:OST/Cyberpunk 2077 OST/217-pt_adamczyk-been_good_to_know_ya-flacon.opus
+496:OST/Cyberpunk 2077 OST/218-pt_adamczyk_feat_olga_jankowska-never_fade_away_(samurai_cover)-flacon.opus
+497:OST/Doom Eternal OST/Mick Gordon - At Eternals Gate (Main Menu).opus
+498:OST/Doom Eternal OST/Mick Gordon - Rip and Tear...Until its Done Title Drop.opus
+499:OST/Doom Eternal OST/Mick Gordon - Hell on Earth (Intro).opus
+500:OST/Doom Eternal OST/Mick Gordon - Hell on Earth.opus
+501:OST/Doom Eternal OST/Mick Gordon - Hell on Earth (Alternate).opus
+502:OST/Doom Eternal OST/Mick Gordon - Call of Hell.opus
+503:OST/Doom Eternal OST/Mick Gordon - Exultia.opus
+504:OST/Doom Eternal OST/Mick Gordon - Slayer Gates (Full).opus
+505:OST/Doom Eternal OST/Mick Gordon - Slayer Gates (Alternate).opus
+506:OST/Doom Eternal OST/Mick Gordon - Betrayer.opus
+507:OST/Doom Eternal OST/Mick Gordon - Cultist Base.opus
+508:OST/Doom Eternal OST/Mick Gordon - The Slayers Time is Now.opus
+509:OST/Doom Eternal OST/Mick Gordon - The Slayers Time is Now (Alternate).opus
+510:OST/Doom Eternal OST/Mick Gordon - Ride to the Base.opus
+511:OST/Doom Eternal OST/Mick Gordon - Doom Hunter Base.opus
+512:OST/Doom Eternal OST/Mick Gordon - Doom Hunter.opus
+513:OST/Doom Eternal OST/Mick Gordon - Its All Part of the Plan.opus
+514:OST/Doom Eternal OST/Mick Gordon - Super Gore Nest.opus
+515:OST/Doom Eternal OST/Mick Gordon - Super Gore Nest (Alternate).opus
+516:OST/Doom Eternal OST/Mick Gordon - Reaching the Nest.opus
+517:OST/Doom Eternal OST/Mick Gordon - Looking for the Resistance.opus
+518:OST/Doom Eternal OST/Mick Gordon - Arc Complex.opus
+519:OST/Doom Eternal OST/Mick Gordon - The Only Thing They Fear is You.opus
+520:OST/Doom Eternal OST/Mick Gordon - The Only Thing They Fear is You (Alternate).opus
+521:OST/Doom Eternal OST/Mick Gordon - Arrival on Phobos.opus
+522:OST/Doom Eternal OST/Mick Gordon - Slayer Has Entered the Facility.opus
+523:OST/Doom Eternal OST/Mick Gordon - BFG—10000.opus
+524:OST/Doom Eternal OST/Mick Gordon - Heading to the Mars.opus
+525:OST/Doom Eternal OST/Mick Gordon - UAC.opus
+526:OST/Doom Eternal OST/Mick Gordon - Mars Core.opus
+527:OST/Doom Eternal OST/Mick Gordon - Mars Core (Alternate).opus
+528:OST/Doom Eternal OST/Mick Gordon - Sentinel Prime.opus
+529:OST/Doom Eternal OST/Mick Gordon - Kar En Tuk.opus
+530:OST/Doom Eternal OST/Mick Gordon - Gladiator.opus
+531:OST/Doom Eternal OST/Mick Gordon - Taras Nabad.opus
+532:OST/Doom Eternal OST/Mick Gordon - Chants of Nabad.opus
+533:OST/Doom Eternal OST/Mick Gordon - Ruins of Nekravol.opus
+534:OST/Doom Eternal OST/Mick Gordon - Creatures of Nekravol.opus
+535:OST/Doom Eternal OST/Mick Gordon - Refined Energy.opus
+536:OST/Doom Eternal OST/Mick Gordon - Voices of Urdak.opus
+537:OST/Doom Eternal OST/Mick Gordon - Urdak.opus
+538:OST/Doom Eternal OST/Mick Gordon - Khan Maykr.opus
+539:OST/Doom Eternal OST/Mick Gordon - Final Sin (Final Boss).opus
+540:OST/Doom Eternal OST/Mick Gordon - Your Fight... is Eternal.opus
+541:OST/Doom Eternal OST/Mick Gordon - Summary.opus
+542:OST/Doom Eternal OST/Mick Gordon - Battlemode Victory.opus
+543:OST/Genshin Impact OST/01_Genshin_Impact_Main_Theme_Genshin_Impact.opus
+544:OST/Genshin Impact OST/02_Dawn_Winery_Theme_Genshin_Impact.opus
+545:OST/Genshin Impact OST/03_A_Sweet_Smile_Genshin_Impact.opus
+546:OST/Genshin Impact OST/04_A_Storm_A_Spire_and_A_Sanctum_Dvalin_s_Nest_Genshin_Impact.opus
+547:OST/Genshin Impact OST/05_Caelestinum_Finale_Termini_Genshin_Impact.opus
+548:OST/Genshin Impact OST/06_Lone_Sojourner_Genshin_Impact.opus
+549:OST/Genshin Impact OST/07_A_Day_in_Mondstadt_Genshin_Impact.opus
+550:OST/Genshin Impact OST/08_Dream_Aria_Genshin_Impact_Main_Theme_Var._Genshin_Impact.opus
+551:OST/Genshin Impact OST/09_Pure_Sky_Genshin_Impact.opus
+552:OST/Genshin Impact OST/10_The_Edge_of_the_Prairie_Genshin_Impact.opus
+553:OST/Genshin Impact OST/11_A_Tale_of_Two_Dragons_Genshin_Impact.opus
+554:OST/Genshin Impact OST/12_Rite_of_Battle_Genshin_Impact.opus
+555:OST/Genshin Impact OST/13_Knighthood_Excellence_Genshin_Impact.opus
+556:OST/Genshin Impact OST/14_Happy_Journey_Genshin_Impact.opus
+557:OST/Genshin Impact OST/15_The_Wind_Catcher_from_a_Foreign_Land_Genshin_Impact.opus
+558:OST/Genshin Impact OST/City_of_Winds_and_Idylls_-_Disc_1_-_City_of_Winds_and_Idylls_Genshin_Impact.opus
+559:OST/Genshin Impact OST/City_of_Winds_and_Idylls_-_Disc_2_-_The_Horizon_of_Dandelion_Genshin_Impact.opus
+560:OST/Genshin Impact OST/City_of_Winds_and_Idylls_-_Disc_3_-_Saga_of_the_West_Wind_Genshin_Impact.opus
+561:OST/Genshin Impact OST/Genshin_Impact_Character_OST_Album_-_The_Stellar_Moments_Vol._2.opus
+562:OST/Genshin Impact OST/Genshin_Impact_Character_OST_Album_-_The_Stellar_Moments.opus
+563:OST/Genshin Impact OST/Islands_of_the_Lost_and_Forgotten_-_Disc_1_-_Isles_of_Serenity_and_Amnesia_Genshin_Impact.opus
+564:OST/Genshin Impact OST/Islands_of_the_Lost_and_Forgotten_-_Disc_2_-_Beneath_the_Abyssal_Depth_Genshin_Impact.opus
+565:OST/Genshin Impact OST/Islands_of_the_Lost_and_Forgotten_-_Disc_3_-_Battles_of_Inazuma_2_Genshin_Impact.opus
+566:OST/Genshin Impact OST/Jade_Moon_Upon_a_Sea_of_Clouds_-_Disc_1_-_Glazed_Moon_Over_the_Tides_Genshin_Impact.opus
+567:OST/Genshin Impact OST/Jade_Moon_Upon_a_Sea_of_Clouds_-_Disc_2_-_Shimmering_Sea_of_Clouds_and_Moonlight_Genshin_Impact.opus
+568:OST/Genshin Impact OST/Jade_Moon_Upon_a_Sea_of_Clouds_-_Disc_3_-_Battles_of_Liyue_Genshin_Impact.opus
+569:OST/Genshin Impact OST/Millelith_s_Watch_-_Disc_1_-_Wrinkled_Peaks_Genshin_Impact.opus
+570:OST/Genshin Impact OST/Millelith_s_Watch_-_Disc_2_-_Underground_Adventures_Genshin_Impact.opus
+571:OST/Genshin Impact OST/Millelith_s_Watch_-_Disc_3_-_Battles_of_the_Chasm_Genshin_Impact.opus
+572:OST/Genshin Impact OST/Realm_of_Tranquil_Eternity_-_Disc_1_-_Sakura_and_Violet_Thunder_Genshin_Impact.opus
+573:OST/Genshin Impact OST/Realm_of_Tranquil_Eternity_-_Disc_2_-_Stories_of_the_Floating_World_Genshin_Impact.opus
+574:OST/Genshin Impact OST/Realm_of_Tranquil_Eternity_-_Disc_3_-_Battles_of_Inazuma_Genshin_Impact.opus
+575:OST/Genshin Impact OST/Song_of_Innocence_-_Inazuma_Chapter_OST_Album_2_-_Through_the_Mists_Theme_MV_Genshin_Impact.opus
+576:OST/Genshin Impact OST/The_Shimmering_Voyage_-_Disc_1_-_Fairytale_of_the_Isles_Genshin_Impact.opus
+577:OST/Genshin Impact OST/The_Shimmering_Voyage_-_Disc_2_-_Blazing_Stars_Genshin_Impact.opus
+578:OST/Genshin Impact OST/The_Shimmering_Voyage_-_Disc_3_-_Roar_of_the_Formidable_Genshin_Impact.opus
+579:OST/Genshin Impact OST/The_Shimmering_Voyage_-_Disc_4_-_A_Stranger_s_Sojourn_Genshin_Impact.opus
+580:OST/Genshin Impact OST/The_Shimmering_Voyage_Vol._2_-_Disc_1_-_A_Vagrant_Breeze_Genshin_Impact.opus
+581:OST/Genshin Impact OST/The_Shimmering_Voyage_Vol._2_-_Disc_2_-_Fantasia_of_the_Isles_Genshin_Impact.opus
+582:OST/Genshin Impact OST/The_Shimmering_Voyage_Vol._2_-_Disc_3_-_A_Turbulent_Peregrination_Genshin_Impact.opus
+583:OST/Genshin Impact OST/The_Wind_and_The_Star_Traveler_Full_Version_Genshin_Impact.opus
+584:OST/Skyrim OST/Dragonborn.opus
+585:OST/Skyrim OST/Awake.opus
+586:OST/Skyrim OST/From Past To Present.opus
+587:OST/Skyrim OST/Unbroken Road.opus
+588:OST/Skyrim OST/Aincient Stones.opus
+589:OST/Skyrim OST/City Gates.opus
+590:OST/Skyrim OST/Silent Footsteps.opus
+591:OST/Skyrim OST/Dragonsreach.opus
+592:OST/Skyrim OST/Tooth and Claw.opus
+593:OST/Skyrim OST/Under An Ancient Sun.opus
+594:OST/Skyrim OST/Death Or Sovngarde.opus
+595:OST/Skyrim OST/Masser.opus
+596:OST/Skyrim OST/Distant Horizons.opus
+597:OST/Skyrim OST/Dawn].opus
+598:OST/Skyrim OST/The Jeraoll Mountains.opus
+599:OST/Skyrim OST/Steel on Steel.opus
+600:OST/Skyrim OST/Secunda.opus
+601:OST/Skyrim OST/Imperial Throne.opus
+602:OST/Skyrim OST/Frostfall.opus
+603:OST/Skyrim OST/Night Wiithout Stars.opus
+604:OST/Skyrim OST/Into Darkness.opus
+605:OST/Skyrim OST/Kyne's Peace.opus
+606:OST/Skyrim OST/Unbound.opus
+607:OST/Skyrim OST/Far Horizons.opus
+608:OST/Skyrim OST/A Winters Taole.opus
+609:OST/Skyrim OST/The Bannered Mare.opus
+610:OST/Skyrim OST/The Streets Of Whiterun.opus
+611:OST/Skyrim OST/One They Fear.opus
+612:OST/Skyrim OST/The White River.opus
+613:OST/Skyrim OST/Silence Unbroken.opus
+614:OST/Skyrim OST/Standing Stones.opus
+615:OST/Skyrim OST/Beneath The Ice.opus
+616:OST/Skyrim OST/Tundra.opus
+617:OST/Skyrim OST/Journey's End.opus
+618:OST/Skyrim OST/Before The Storm.opus
+619:OST/Skyrim OST/A Chance Meeting.opus
+620:OST/Skyrim OST/Out Of The Cold.opus
+621:OST/Skyrim OST/Around The Fire.opus
+622:OST/Skyrim OST/Shadows and Echos.opus
+623:OST/Skyrim OST/Caught Off Guard.opus
+624:OST/Skyrim OST/Aurora.opus
+625:OST/Skyrim OST/Blood and Steel.opus
+626:OST/Skyrim OST/Towers and Shadows.opus
+627:OST/Skyrim OST/Seven Thousand Steps.opus
+628:OST/Skyrim OST/Solitude.opus
+629:OST/Skyrim OST/Watch The Skies.opus
+630:OST/Skyrim OST/The Gathering Storm.opus
+631:OST/Skyrim OST/Sky Above, Voilce Within.opus
+632:OST/Skyrim OST/Death In The Darkness.opus
+633:OST/Skyrim OST/Shattered Shields.opus
+634:OST/Skyrim OST/Sovngarde.opus
+635:OST/Skyrim OST/Wind Guide You.opus
+playlist_end

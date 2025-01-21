@@ -1,2 +1,2 @@
---cookies-from-browser firefox
+--cookies $HOME/.local/share/yt-dlp/cookie
 -N 10

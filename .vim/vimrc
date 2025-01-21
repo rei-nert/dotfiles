@@ -197,6 +197,8 @@ nnoremap <C-L> :nohl<CR><C-L>
 "find <++> and edit it
 
 nnoremap <Space><Space> /<++><CR>:noh<CR>"_c4l
+nnoremap j gj
+nnoremap k gk
 
 " replace ex mode with gq
 map Q gq

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+rsync -V >/dev/null && rsync -avhP $HOME/.local/bin/scripts/ $HOME/dotfiles/.local/bin/scripts
+rsync -V >/dev/null && rsync -avhP $HOME/.config/{alacritty,btop,cmus,dwl,foot,gtk-3.0,gtk-2.0,gtk-4.0,htop,kitty,mako,mpd,mpv,ncmpcpp,neofetch,nnn,nvim,picom,sway,swayidle,transmission,waybar,wofi,yay,youtube-dl,yt-dlp} $HOME/dotfiles/.config
+rsync -V >/dev/null && rsync -avhP $HOME/.vim/vimrc $HOME/dotfiles/.vim
+rsync -V >/dev/null && rsync -avhP $HOME/.newsboat/ \
+  $HOME/{.bashrc,.bash_alias,.bash_profile,.dircolors,.gitconfig,.zshrc,.tmux.config} \
+  $HOME/dotfiles

@@ -31,7 +31,11 @@ if [ "$OS" = "Arch Linux" ] || [ "$OS" = "Manjaro Linux" ]; then
     $SUPERUSER pacman -Syu --noconfirm
   fi
 elif [ "$OS" = "Fedora Linux" ] || [ "$OS" = "CentOS Linux" ] || [ "$OS" = "CentOS Stream" ] || [ "$OS" = "Red Hat Enterprise Linux" ] || [ "$OS" = "Rocky Linux" ]; then
-  $SUPERUSER dnf update -y
+  if [ -x /usr/bin/dnf5 ]; then
+    $SUPERUSER dnf5 update -y
+  else
+    $SUPERUSER dnf update -y
+  fi
 elif [ "$OS" = "Debian GNU/Linux" ] || [ "$OS" = "Ubuntu" ] || [ "$OS" = "Pop!_OS" ]; then
   $SUPERUSER apt-get update && $SUPERUSER apt-get upgrade -y
 elif [ "$OS" = "openSUSE Tumbleweed" ] || [ "$OS" = "SLED" ] || [ "$OS" = "SLES" ] || [ "$OS" = "openSUSE Leap" ]; then
@@ -43,10 +47,10 @@ elif [ "$OS" = "Gentoo" ]; then
 elif [ "$OS" = "FreeBSD" ]; then
   $SUPERUSER pkg update && $SUPERUSER pkg upgrade -y
 else
-  $SUPERUSER "Sorry, I can't update your $OS system. Try updating manually"
+  echo "Sorry, I can't update your $OS system. Try updating manually"
 fi
 
-which flatpak 1>/dev/null 2>&1 && flatpak update -y
-which distrobox 1>/dev/null 2>&1 && distrobox-upgrade --all
+which flatpak 1>/dev/null 2>&1 && flatpak update -y && echo "Flatpak updated"
+which distrobox 1>/dev/null 2>&1 && distrobox-upgrade --all && echo "Distrobox updated"
 
 echo "Successfully update system"

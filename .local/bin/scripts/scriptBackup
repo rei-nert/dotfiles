@@ -1,0 +1,3 @@
+#!/bin/sh
+
+rsync -V && rsync -avhP $HOME/.local/bin/scripts/ $HOME/dotfiles/.local/bin/scripts
