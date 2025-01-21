@@ -1,6 +1,5 @@
 #!/bin/sh
 DATE="$(date -u +%Y%m%d%H%M%S)"
-zetDIR="$HOME/zettelkasten"
-mkdir "$zetDIR/$DATE"
-touch "$zetDIR/$DATE/README.md"
-$EDITOR "$zetDIR/$DATE/README.md"
+mkdir "$DATE"
+touch "$DATE/README.md"
+vim "$DATE/README.md"

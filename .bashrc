@@ -40,9 +40,9 @@ export CXXFLAGS="${COMMON_FLAGS}"
 export MAKEOPTS="-j6 -l6"
 export ELECTRON_OZONE_PLATFORM_HINT="wayland"
 
-if [[ -x /usr/sbin/nvim ]]; then
+if [[ -x /usr/bin/nvim ]]; then
 	export EDITOR=nvim
-elif [[ -x /usr/sbin/vim ]]; then
+elif [[ -x /usr/bin/vim ]]; then
 	export EDITOR=vim
 else
 	export EDITOR=vi
@@ -61,9 +61,9 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
-gsettings set org.gnome.desktop.interface cursor-theme capitaine-cursors
-gsettings set org.gnome.desktop.interface icon-theme la-capitaine-icon-theme
-gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
+#gsettings set org.gnome.desktop.interface cursor-theme capitaine-cursors
+#gsettings set org.gnome.desktop.interface icon-theme la-capitaine-icon-theme
+#gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 
 # pager
@@ -136,6 +136,12 @@ fi
 case "$TERM" in
 xterm-color | *-256color) color_prompt=yes ;;
 esac
+
+# Set doas completition
+if [[ -x /usr/sbin/doas ]]; then
+	complete -cf doas
+fi
+complete -cf sudo
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
@@ -270,23 +276,22 @@ PROMPT_COMMAND="__ps1"
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-
 # ASDF for software manager on Arch Linux
 if [[ -x /opt/asdf-vm/bin/asdf ]]; then
 	. /opt/asdf-vm/asdf.sh
 fi
 
 # ASDF for software manager using Git
-# . $HOME/.asdf/asdf.sh
-# . $HOME/.asdf/completions/asdf.bash
+ . $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
 #
 
 # NNN config
-if [[ -x /usr/sbin/nnn ]]; then
-	export NNN_OPTS="deH" # d for details, e to open files in $VISUAL H for hidden files 
-	export LC_COLLATE="C" # hidden files on top
+if [[ -x /usr/bin/nnn ]]; then
+	export NNN_OPTS="deH"           # d for details, e to open files in $VISUAL H for hidden files
+	export LC_COLLATE="C"           # hidden files on top
 	export NNN_FIFO="/tmp/nnn.fifo" # temporary buffer for the previews
-	export NNN_FCOLORS="AAAAE631BBBBCCCCDDDD9999" 
+	export NNN_FCOLORS="AAAAE631BBBBCCCCDDDD9999"
 	export NNN_PLUG='p:preview-tui;n:nuke;i:imgview;f:finder;a:autojump;u:getplugs;k:kdeconnect'
 fi
 

@@ -1,5 +1,0 @@
-#!/bin/sh
-
-PATH_SCRIPTS="$HOME/.local/bin/scripts"
-
-ls -la $PATH_SCRIPTS
