@@ -1,3 +1,4 @@
+add -p Doom Eternal OST/
 cmus --plugins
 update-cache -f
 add ~/Music/Albuns/
@@ -9,7 +10,6 @@ add -p 1. The Lord Of The Rings- The Fellowship Of The Ring (OST)/
 add -p Skyrim OST/
 pl-create Skyrim OST
 add -p Cyberpunk 2077 OST/
-add -p Doom Eternal OST/
 add -p Genshin Impact OST/
 add -p
 pl-create LotR OST
