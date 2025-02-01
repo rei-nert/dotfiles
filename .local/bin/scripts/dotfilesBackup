@@ -5,3 +5,4 @@ rsync -V >/dev/null && rsync -avhP $HOME/.config/{alacritty,btop,cmus,dwl,foot,g
 rsync -V >/dev/null && rsync -avhP $HOME/.vim/vimrc $HOME/dotfiles/.vim
 rsync -V >/dev/null && rsync -avhP $HOME/.newsboat/ $HOME/dotfiles/.newsboat
 rsync -V >/dev/null && rsync -avhP $HOME/{.bashrc,.bash_alias,.bash_profile,.dircolors,.gitconfig,.zshrc,.tmux.conf} $HOME/dotfiles
+rsync -V >/dev/null && rsync -avhP $HOME/.config/transmission-daemon/settings.json $HOME/dotfiles/.config/transmission-daemon/
