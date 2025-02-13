@@ -1,0 +1,3 @@
+#!/bin/sh
+
+openssl -v &>/dev/null && openssl dgst -sha3-512 "$*"

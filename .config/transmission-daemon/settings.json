@@ -17,7 +17,7 @@
     "cache-size-mb": 4,
     "default-trackers": "",
     "dht-enabled": true,
-    "download-dir": "/home/reinert/Downloads",
+    "download-dir": "~/Downloads",
     "download-queue-enabled": true,
     "download-queue-size": 10,
     "encryption": 1,
