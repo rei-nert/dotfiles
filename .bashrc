@@ -276,15 +276,14 @@ __ps1() {
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-# ASDF for software manager on Arch Linux
-#if [[ -x /opt/asdf-vm/bin/asdf ]]; then
-#	. /opt/asdf-vm/asdf.sh
-#fi
+if [[ -x /usr/sbin/asdf ]] || [[ -x /usr/bin/asdf ]]; then
+  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+  . <(asdf completion bash)
+fi
 
-# ASDF for software manager using Git
-# . $HOME/.asdf/asdf.sh
-#. $HOME/.asdf/completions/asdf.bash
-#
+if [[ -x /usr/sbin/zoxide ]] || [[ -x /usr/bin/zoxide ]]; then
+  eval "$(zoxide init bash)"
+fi
 
 # NNN config
 if [[ -x /usr/bin/nnn ]]; then
@@ -306,6 +305,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [[ -x /usr/sbin/starship ]]; then
+if [[ -x /usr/sbin/starship ]] || [[ -x /usr/bin/starship ]]; then
   eval "$(starship init bash)"
 fi

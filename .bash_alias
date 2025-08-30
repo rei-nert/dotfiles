@@ -42,7 +42,6 @@ if [[ -x /usr/sbin/btop ]]; then
 fi
 
 if [[ -x /usr/sbin/zoxide ]]; then
-	eval "$(zoxide init bash)"
 	alias cd='z'
 fi
 
