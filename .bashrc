@@ -40,9 +40,9 @@ export CXXFLAGS="${COMMON_FLAGS}"
 export MAKEOPTS="-j6 -l6"
 export ELECTRON_OZONE_PLATFORM_HINT="wayland"
 
-if [[ -x /usr/bin/nvim ]]; then
+if [[ -x /usr/bin/nvim ]] || [[ -x /usr/sbin/nvim ]]; then
   export EDITOR=nvim
-elif [[ -x /usr/bin/vim ]]; then
+elif [[ -x /usr/bin/vim ]] || [[ -x /usr/sbin/vim ]]; then
   export EDITOR=vim
 else
   export EDITOR=vi
@@ -230,8 +230,8 @@ pathappend \
   /bin
 
 # some aliases
-if [ -f "$HOME/.bash_aliases" ]; then
-  . "$HOME/.bash_aliases"
+if [ -f "$HOME/.bash_alias" ]; then
+  . "$HOME/.bash_alias"
 fi
 
 # --------------------------- smart prompt ---------------------------
