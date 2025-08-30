@@ -269,7 +269,7 @@ __ps1() {
   fi
 }
 
-PROMPT_COMMAND="__ps1"
+#PROMPT_COMMAND="__ps1"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -304,4 +304,8 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
+fi
+
+if [[ -x /usr/sbin/starship ]]; then
+  eval "$(starship init bash)"
 fi
