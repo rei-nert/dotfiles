@@ -1,0 +1,7 @@
+#!/bin/sh
+
+DATE="$(date -u +%Y%m%d%H%M%S)"
+git add .
+git commit -m "$DATE"
+git pull
+git push

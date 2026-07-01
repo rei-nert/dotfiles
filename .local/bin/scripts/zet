@@ -1,6 +1,45 @@
 #!/bin/sh
+
+###########################################################
+# Help                                                    #
+###########################################################
+Help() {
+  echo "Script to create a zettelkasten on a git repository "
+  echo
+  echo "Syntax: zet [-s|h|p|n]"
+  echo
+  echo "options:"
+  echo "-s    Subject of file, putting it in the right folder"
+  echo "-h    Print this help"
+  echo "-p    Change main path of note file"
+  echo "-n    Name of the file and its main topic, otherwise its name is the time of file creation"
+  echo
+}
+
 DATE="$(date -u +%Y%m%d%H%M%S)"
-zetDIR="$HOME/zettelkasten"
+zetDIR="$HOME/git/zettelkasten/$(date -u +%Y)"
+NAME="$DATE"
+
+while getopts ":hs:p:n:" option; do
+  case $option in
+  h)
+    Help
+    exit
+    ;;
+  n) NAME="${OPTARG}" ;;
+  p) NotePath=${OPTARG} ;;
+  s) SUB=${OPTARG} ;;
+  \?)
+    echo "Error: Invalid option"
+    echo "Use note -h to see help about the command"
+    exit
+    ;;
+  esac
+done
+
 mkdir "$zetDIR/$DATE"
 touch "$zetDIR/$DATE/README.md"
+
+printf "# %s\n\n" "${NAME}" >>"$zetDIR/$DATE/README.md"
+
 $EDITOR "$zetDIR/$DATE/README.md"
