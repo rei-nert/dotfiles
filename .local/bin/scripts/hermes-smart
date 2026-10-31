@@ -1,0 +1,79 @@
+#!/bin/sh
+
+# hermes-smart
+# Small model (gemma2:9b) rewrites the request → bigger model runs in Hermes
+
+set -eu
+
+# === CONFIG ===
+SMALL_MODEL="qwen3.5:2b"
+HERMES_MODEL="inkling:free" # change if you use a different agent model
+OLLAMA_URL="http://127.0.0.1:11434"
+
+# Check dependencies
+command -v curl >/dev/null 2>&1 || {
+  echo "curl is required"
+  exit 1
+}
+command -v jq >/dev/null 2>&1 || {
+  echo "jq is required"
+  exit 1
+}
+command -v hermes >/dev/null 2>&1 || {
+  echo "hermes is required"
+  exit 1
+}
+
+# Original request
+if [ "$#" -eq 0 ]; then
+  echo "Usage: hermes-smart <your request>"
+  exit 1
+fi
+
+ORIGINAL="$*"
+
+echo "→ Interpreting with $SMALL_MODEL ..."
+
+# Build the rewrite prompt (POSIX-safe)
+REWRITE_PROMPT="You are a request rewriter for an AI agent called Hermes.
+
+Your only job:
+1. Understand the user's real goal.
+2. Rewrite it into a clear, concise, actionable instruction for the agent.
+3. Keep important constraints, paths, formats, and preferences.
+4. Remove fluff, conversation, and unnecessary words.
+5. Output ONLY the rewritten prompt — nothing else.
+
+User request:
+$ORIGINAL"
+
+# Call Ollama with gemma2:9b (low temperature, moderate context)
+CLEAN_PROMPT=$(curl -s "$OLLAMA_URL/api/generate" \
+  -H "Content-Type: application/json" \
+  -d "{
+    \"model\": \"$SMALL_MODEL\",
+    \"prompt\": $(printf '%s' "$REWRITE_PROMPT" | jq -Rs .),
+    \"stream\": false,
+    \"options\": {
+      \"temperature\": 0.2,
+      \"top_p\": 0.9,
+      \"num_ctx\": 8192,
+      \"num_predict\": 1024
+    }
+  }" | jq -r '.response // empty' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+
+if [ -z "$CLEAN_PROMPT" ]; then
+  echo "Error: small model returned empty response"
+  exit 1
+fi
+
+echo
+echo "=== Clean prompt for Hermes ==="
+echo "$CLEAN_PROMPT"
+echo "==============================="
+echo
+echo "→ Sending to Hermes ($HERMES_MODEL) ..."
+echo
+
+# Hand the clean prompt to Hermes
+hermes chat -q "$CLEAN_PROMPT"
