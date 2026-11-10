@@ -1,123 +1,137 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/home/reinert/Downloads/SML/bin:$PATH
+# ─── History ─────────────────────────────────────────────────────
+HISTFILE=~/.zsh_history
+export HISTSIZE=1000000000
+export SAVEHIST=$HISTSIZE
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_VERIFY
+setopt SHARE_HISTORY
+setopt INC_APPEND_HISTORY
+setopt EXTENDED_HISTORY
 
+# ─── Shell Options ───────────────────────────────────────────────
+setopt EXTENDED_GLOB        # **, ~, ^ patterns
+setopt GLOB_DOTS            # include dotfiles in globs
+setopt NO_CASE_GLOB         # case-insensitive globbing
+setopt CORRECT              # command correction
+setopt INTERACTIVE_COMMENTS # allow # comments in CLI
+setopt NO_BEEP
+setopt autocd
+set -o vi
 
-# Path to your oh-my-zsh installation.
-export ZSH="/home/reinert/.oh-my-zsh"
-export EDITOR=vim
-export VISUAL=vim
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-ZSH_THEME="risto"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="dd/mm/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-plugins=(asdf)
-
-source $ZSH/oh-my-zsh.sh
-
-. $HOME/.asdf/asdf.sh
-
-
-# append completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
-# initialise completions with ZSH's compinit
+bindkey -v '^?' backward-delete-char
+# ─── Keybindings ─────────────────────────────────────────────────
+# ─── Completion ──────────────────────────────────────────────────
 autoload -Uz compinit
-compinit
+compinit -C
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'  # case-insensitive
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion::complete:*' gain-privileges 1
 
-# User configuration
+# sudo/doas completion
+compdef _sudo sudo
+compdef _sudo doas
 
-# export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+zstyle ':completion:*' rehash true
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias gs='git status'
-alias rm='rm -i'
-alias mv='mv -i'
-alias grep='grep --color=auto'
-alias isodate='date -u +%Y%m%d%H%M%S'
-
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
+# ─── Dircolors ───────────────────────────────────────────────────
+if [[ -r ~/.dircolors ]]; then
+  eval "$(dircolors -b ~/.dircolors)"
+else
+  eval "$(dircolors -b)"
 fi
+
+# ─── Less Colors ─────────────────────────────────────────────────
+export LESS_TERMCAP_mb=$'\e[35m'  # magenta
+export LESS_TERMCAP_md=$'\e[33m'  # yellow
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[34m'  # blue
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[4m'   # underline
+
+# ─── Lesspipe ────────────────────────────────────────────────────
+if (( $+commands[lesspipe] )); then
+  export LESSOPEN="| /usr/bin/lesspipe %s"
+  export LESSCLOSE="/usr/bin/lesspipe %s %s"
+fi
+
+source <(fzf --zsh)
+eval "$(starship init zsh)"
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
+
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
+
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
+
+### End of Zinit's installer chunk
+#
+#
+# ─── Utility Functions ───────────────────────────────────────────
+_have() { (( $+commands[$1] )); }
+_source_if() { [[ -r $1 ]] && source $1; }
+
+# dwm reload
+dwm-reload() {
+  kill -HUP "${$(pgrep -o dwm 2>/dev/null):-}" 2>/dev/null || echo "dwm not running"
+}
+
+# ─── Xresources ──────────────────────────────────────────────────
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+
+# ─── Prompt: Starship ────────────────────────────────────────────
+if _have starship; then
+  eval "$(starship init zsh)"
+fi
+
+# ─── Zoxide ──────────────────────────────────────────────────────
+if _have zoxide; then
+  eval "$(zoxide init zsh)"
+fi
+
+# ─── Mise ────────────────────────────────────────────────────────
+if [[ -x $HOME/.local/bin/mise ]]; then
+  eval "$(mise activate zsh)"
+fi
+
+# ─── NNN ─────────────────────────────────────────────────────────
+if _have nnn; then
+  export NNN_OPTS="deH"
+  export LC_COLLATE="C"
+  export NNN_FIFO="/tmp/nnn.fifo"
+  export NNN_FCOLORS="AAAAE631BBBBCCCCDDDD9999"
+  export NNN_PLUG='p:preview-tui;n:nuke;i:imgview;f:finder;a:autojump;u:getplugs;k:kdeconnect'
+fi
+
+# ─── DMENU / CM_LAUNCHER ────────────────────────────────────────
+export CM_LAUNCHER=dmenu
+export DMENU_OPTIONS="-i -l 10 -nb #1e1e2e -nf #cdd6f4 -sb #1e1e2e -sf #89b4fa"
+
+# ─── VIMSPELL ────────────────────────────────────────────────────
+[[ -d ~/.vim/spell ]] && export VIMSPELL=(~/.vim/spell/*.add(N))
+
+# ─── ALIASES ────────────────────────────────────────────────────
+[[ -f ~/.zsh_aliases ]] && source ~/.zsh_aliases
