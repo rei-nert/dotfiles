@@ -1,0 +1,13 @@
+[opener]
+pdf = [
+  { run = "mupdf %s1", desc = "mupdf" },
+]
+image = [
+  { run = "feh --fullscreen --auto-zoom %s1", desc = "feh" },
+]
+
+[open]
+prepend_rules = [
+  { mime = "application/pdf", use = "pdf" },
+  { mime = "image/*", use = "image" },
+]
