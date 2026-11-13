@@ -1,0 +1,53 @@
+#!/bin/sh
+
+#!/bin/sh
+set -eu
+
+DOTFILES_DIR="${1:-$HOME/git/dotfiles}"
+
+if [ ! -d "$DOTFILES_DIR" ]; then
+  printf 'Error: Dotfiles directory not found: %s\n' "$DOTFILES_DIR" >&2
+  exit 1
+fi
+
+# Canonicalize paths using POSIX cd/pwd (avoids non-POSIX readlink -f)
+DOTFILES_DIR="$(CDPATH='' cd -- "$DOTFILES_DIR" && pwd)"
+SCRIPT_PATH="$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)/$(basename -- "$0")"
+BACKUP_DIR="$HOME/.dotfiles_backup_$(date +%Y%m%d_%H%M%S)"
+
+inode_of() {
+  ls -id -- "$1" 2>/dev/null | awk '{print $1}'
+}
+
+find "$DOTFILES_DIR" -name .git -prune -o -type f -print | while IFS= read -r src; do
+  # Skip this script if it lives inside the dotfiles repo
+  [ "$src" = "$SCRIPT_PATH" ] && continue
+
+  rel="${src#"$DOTFILES_DIR/"}"
+
+  # Skip repo metadata files
+  case "$rel" in
+  .gitignore | .gitattributes | .gitmodules | README* | LICENSE*)
+    continue
+    ;;
+  esac
+
+  dst="$HOME/$rel"
+
+  # Check if destination already exists (including broken symlinks)
+  if [ -e "$dst" ] || [ -L "$dst" ]; then
+    # Skip if already hard-linked to the exact same inode
+    if [ -f "$dst" ] && [ ! -L "$dst" ] && [ "$(inode_of "$src")" = "$(inode_of "$dst")" ]; then
+      continue
+    fi
+
+    # Lazily create backup directory only when a conflict occurs
+    mkdir -p -- "$(dirname -- "$BACKUP_DIR/$rel")"
+    mv -- "$dst" "$BACKUP_DIR/$rel"
+    printf 'Backed up: %s -> %s\n' "$dst" "$BACKUP_DIR/$rel"
+  fi
+
+  mkdir -p -- "$(dirname -- "$dst")"
+  ln -- "$src" "$dst"
+  printf 'Linked: %s -> %s\n' "$dst" "$src"
+done
